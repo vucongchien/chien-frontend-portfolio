@@ -9,15 +9,15 @@ export default function Footer() {
             <span className="text-sm font-semibold text-slate-800">
               Vũ Công Chiến
             </span>
-            <span className="text-sm text-slate-400">· Frontend Developer</span>
+            <span className="text-sm text-slate-400">· Software Engineering</span>
           </div>
 
           {/* Center — nav links */}
           <nav className="flex items-center gap-6 text-sm text-slate-500">
-            <a href="#" className="hover:text-indigo-600 transition-colors">About</a>
-            <a href="#" className="hover:text-indigo-600 transition-colors">Projects</a>
-            <a href="#" className="hover:text-indigo-600 transition-colors">Skills</a>
-            <a href="#" className="hover:text-indigo-600 transition-colors">Contact</a>
+            <a href="#about" className="hover:text-indigo-600 transition-colors">About</a>
+            <a href="#projects" className="hover:text-indigo-600 transition-colors">Projects</a>
+            <a href="#skills" className="hover:text-indigo-600 transition-colors">Skills</a>
+            <a href="#contact" className="hover:text-indigo-600 transition-colors">Contact</a>
           </nav>
 
           {/* Right — copyright */}

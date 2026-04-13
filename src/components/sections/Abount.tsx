@@ -29,12 +29,10 @@ export default function Abount() {
               <h3 className="text-base font-semibold text-slate-800">Hey there 👋</h3>
               <p className="text-slate-600">
                 I&apos;m <span className="font-bold text-indigo-600">Vũ Công Chiến</span>,
-                a frontend developer focused on building modern web applications.
+                a Software Engineering focused on building modern web applications.
               </p>
               <p className="text-slate-600">
-                I enjoy working with <b>React</b>, <b>Next.js</b> and{" "}
-                <b>TypeScript</b>, exploring clean UI architecture, performance
-                optimization and scalable design systems.
+                I enjoy working with <b>AI Agents</b>, to deverlop frontend with <b>React</b>, <b>Next.js</b> and{" "} backend with <b>Node.js</b>, <b>FastAPI</b>, exploring clean UI architecture, performance optimization and scalable design systems.
               </p>
               <p className="text-slate-500">Student at PTIT University — Software Engineering</p>
             </div>

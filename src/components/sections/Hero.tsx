@@ -3,9 +3,9 @@
 import { useState, useEffect, useCallback } from "react";
 
 const TITLES = [
-  "Frontend Developer",
+  "Software Engineer",
   "React · Next.js",
-  "TypeScript · Tailwind",
+  "Node.js · Python",
 ];
 
 const TYPING_SPEED = 80;

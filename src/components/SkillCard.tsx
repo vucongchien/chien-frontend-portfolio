@@ -25,7 +25,7 @@ export default function SkillCard({ skill, index }: SkillCardProps) {
       <div
         className="
           relative z-10 flex flex-col items-center gap-1.5 sm:gap-2 rounded-xl
-          border border-slate-200 bg-white p-2 sm:p-3
+          border border-slate-200 bg-white p-2 sm:p-3 h-full
           transition-colors duration-300 ease-out
           group-hover:border-indigo-300
         "

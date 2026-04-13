@@ -44,8 +44,9 @@ export default function Projects() {
                   "Tailwind CSS",
                   "TypeScript",
                   "CopilotKit",
-                  "Supabase",
+                  "Supabase (PostgreSQL)",
                   "Google ADK",
+                  "FastAPI"
                 ]}
                 reverse={false}
               >
@@ -61,7 +62,8 @@ export default function Projects() {
                       <li>Sử dụng Next.js làm frontend</li>
                       <li>CopilotKit làm frontend tool cho Agent</li>
                       <li>Thiết kế database &amp; hỗ trợ triển khai</li>
-                      <li>Viết API docs cho backend</li>
+                      <li>Thiết kế và triển khai backend bằng FastAPI</li>
+                      <li>Giao tiếp với team để thống nhất ý tưởng và triển khai</li>
                     </ul>
                   </div>
 
