@@ -1,14 +1,20 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-28T09:38:38.797Z",
+  "buildTime": "2026-08-28T10:11:16.831Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "088cf10",
-    "message": "chore(deps): nâng cấp nextjs và eslint-config-next lên v16.3.3",
+    "hash": "1f14bf5",
+    "message": "feat(changelog): hoàn thiện trang changelog tối giản và cập nhật design rules",
     "author": "Vucongchien",
-    "date": "2026-08-28 16:17:02 +0700"
+    "date": "2026-08-28 16:54:03 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "1f14bf5",
+      "message": "feat(changelog): hoàn thiện trang changelog tối giản và cập nhật design rules",
+      "author": "Vucongchien",
+      "date": "2026-08-28 16:54:03 +0700"
+    },
     {
       "hash": "088cf10",
       "message": "chore(deps): nâng cấp nextjs và eslint-config-next lên v16.3.3",

@@ -20,9 +20,6 @@ export default function Footer() {
             <a href="#projects" className="hover:text-indigo-600 transition-colors">Projects</a>
             <a href="#skills" className="hover:text-indigo-600 transition-colors">Skills</a>
             <a href="#contact" className="hover:text-indigo-600 transition-colors">Contact</a>
-            <Link href="/changelog" className="hover:text-indigo-600 transition-colors font-medium text-slate-600">
-              Changelog
-            </Link>
           </nav>
 
           {/* Right — copyright */}
