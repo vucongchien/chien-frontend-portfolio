@@ -1,4 +1,4 @@
-import DeployStatusBadge from "./DeployStatusBadge";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -20,15 +20,15 @@ export default function Footer() {
             <a href="#projects" className="hover:text-indigo-600 transition-colors">Projects</a>
             <a href="#skills" className="hover:text-indigo-600 transition-colors">Skills</a>
             <a href="#contact" className="hover:text-indigo-600 transition-colors">Contact</a>
+            <Link href="/changelog" className="hover:text-indigo-600 transition-colors font-medium text-slate-600">
+              Changelog
+            </Link>
           </nav>
 
-          {/* Right — copyright & deploy telemetry */}
-          <div className="flex flex-col sm:flex-row items-center gap-3">
-            <DeployStatusBadge />
-            <p className="text-xs text-slate-400">
-              © 2026 · Built with Next.js
-            </p>
-          </div>
+          {/* Right — copyright */}
+          <p className="text-xs text-slate-400">
+            © 2026 · Built with Next.js
+          </p>
         </div>
       </div>
     </footer>

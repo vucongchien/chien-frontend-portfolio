@@ -1,27 +1,22 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("Portfolio E2E User Flow", () => {
-  test("trang chủ tải thành công và hiển thị các section chính", async ({ page }) => {
+test.describe("Portfolio & Changelog E2E User Flow", () => {
+  test("duyệt trang chủ và chuyển sang trang Changelog thành công", async ({ page }) => {
+    // 1. Tải trang chủ
     await page.goto("/");
+    await expect(page.locator("text=Vũ Công Chiến").first()).toBeVisible();
 
-    // 1. Kiểm tra tiêu đề trang
-    await expect(page).toHaveTitle(/Vũ Công Chiến|Portfolio/i);
+    // 2. Click vào liên kết Changelog ở Footer
+    const changelogLink = page.locator("footer a:has-text('Changelog')");
+    await expect(changelogLink).toBeVisible();
+    await changelogLink.click();
 
-    // 2. Kiểm tra phần Hero và thông tin cá nhân
-    await expect(page.locator("text=Vũ Công Chiến")).toBeVisible();
+    // 3. Kiểm tra đã chuyển hướng sang trang /changelog
+    await expect(page).toHaveURL(/.*\/changelog/);
+    await expect(page.locator("h1:has-text('Changelog')")).toBeVisible();
 
-    // 3. Kiểm tra Deploy Badge hiển thị ở Footer
-    const deployBadge = page.locator("button[title*='deploy và commit']");
-    await expect(deployBadge).toBeVisible();
-
-    // 4. Click mở Modal Release History
-    await deployBadge.click();
-    const modal = page.locator("role=dialog");
-    await expect(modal).toBeVisible();
-    await expect(page.locator("text=Thông tin Phiên bản & Triển khai")).toBeVisible();
-
-    // 5. Đóng modal bằng phím Escape
-    await page.keyboard.press("Escape");
-    await expect(modal).not.toBeVisible();
+    // 4. Kiểm tra render các version milestones
+    await expect(page.locator("text=v0.1.0")).toBeVisible();
+    await expect(page.locator("text=v0.0.1")).toBeVisible();
   });
 });

@@ -1,14 +1,20 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-28T09:16:47.254Z",
+  "buildTime": "2026-08-28T09:38:38.797Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "975ab9b",
-    "message": "test(e2e): cấu hình playwright và kịch bản kiểm thử user flow",
+    "hash": "088cf10",
+    "message": "chore(deps): nâng cấp nextjs và eslint-config-next lên v16.3.3",
     "author": "Vucongchien",
-    "date": "2026-08-28 16:09:28 +0700"
+    "date": "2026-08-28 16:17:02 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "088cf10",
+      "message": "chore(deps): nâng cấp nextjs và eslint-config-next lên v16.3.3",
+      "author": "Vucongchien",
+      "date": "2026-08-28 16:17:02 +0700"
+    },
     {
       "hash": "975ab9b",
       "message": "test(e2e): cấu hình playwright và kịch bản kiểm thử user flow",
