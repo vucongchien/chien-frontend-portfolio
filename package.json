@@ -3,10 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/generate-changelog.mjs && next dev",
+    "prebuild": "node scripts/generate-changelog.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:fast": "oxlint --deny-warnings",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:unit": "vitest run"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -16,13 +23,20 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "jsdom": "^30.0.1",
+    "oxlint": "^1.80.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
   }
 }
