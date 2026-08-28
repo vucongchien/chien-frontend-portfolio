@@ -1,3 +1,5 @@
+import Diamond from "@/components/ui/Diamond";
+
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
@@ -5,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Left — name + role */}
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-indigo-600 rotate-45" />
+            <Diamond size="sm" color="indigo" />
             <span className="text-sm font-semibold text-slate-800">
               Vũ Công Chiến
             </span>

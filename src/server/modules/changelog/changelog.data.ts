@@ -1,8 +1,4 @@
-export interface ChangelogItem {
-  version: string;
-  releaseDate: string;
-  changes: string[];
-}
+import { ChangelogItem } from "@/types";
 
 export const changelogData: ChangelogItem[] = [
   {

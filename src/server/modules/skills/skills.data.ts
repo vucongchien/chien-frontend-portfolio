@@ -1,14 +1,4 @@
-export type Skill = {
-  name: string;
-  icon: string;
-  level: 1 | 2 | 3 | 4 | 5;
-};
-
-export type SkillCategory = {
-  title: string;
-  emoji: string;
-  skills: Skill[];
-};
+import { SkillCategory } from "@/types";
 
 export const skillCategories: SkillCategory[] = [
   {

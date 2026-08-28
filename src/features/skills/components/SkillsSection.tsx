@@ -1,7 +1,7 @@
 "use client";
 
-import { skillCategories } from "@/lib/skillsData";
-import SkillCard from "@/components/SkillCard";
+import { getSkillCategories } from "@/server/modules/skills/skills.service";
+import SkillCard from "./SkillCard";
 
 /**
  * Accent colors per category — soft tones đồng bộ palette
@@ -28,7 +28,9 @@ const categoryAccents = [
   },
 ];
 
-export default function Skills() {
+export default function SkillsSection() {
+  const skillCategories = getSkillCategories();
+
   if (!skillCategories || skillCategories.length === 0) {
     return (
       <section id="skills" className="py-20 px-6">
@@ -40,7 +42,6 @@ export default function Skills() {
   return (
     <section id="skills" className="w-full overflow-hidden">
       <div className="space-y-6">
-
         {/* Skill Categories */}
         <div className="space-y-4 sm:space-y-6">
           {skillCategories.map((category, catIdx) => {

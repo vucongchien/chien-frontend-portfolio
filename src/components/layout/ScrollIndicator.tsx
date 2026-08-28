@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 /**
  * Scroll progress indicator — thanh dọc bên phải màn hình
  * Hiển thị các dash marks cho biết vị trí scroll hiện tại
- * Tham khảo: hình user gửi — các gạch ngang nhỏ bên phải
  */
 
 export default function ScrollIndicator() {
@@ -14,7 +13,8 @@ export default function ScrollIndicator() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const progress = docHeight > 0 ? scrollTop / docHeight : 0;
       setScrollProgress(Math.min(progress, 1));
     };
@@ -39,11 +39,12 @@ export default function ScrollIndicator() {
             key={i}
             className={`
               transition-all duration-300 rounded-full
-              ${isCurrent
-                ? "w-1 h-5 bg-indigo-600"
-                : isActive
-                  ? "w-0.5 h-3 bg-indigo-400"
-                  : "w-0.5 h-3 bg-slate-300"
+              ${
+                isCurrent
+                  ? "w-1 h-5 bg-indigo-600"
+                  : isActive
+                    ? "w-0.5 h-3 bg-indigo-400"
+                    : "w-0.5 h-3 bg-slate-300"
               }
             `}
           />
