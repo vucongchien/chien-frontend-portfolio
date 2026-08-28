@@ -1,3 +1,5 @@
+import DeployStatusBadge from "./DeployStatusBadge";
+
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
@@ -20,10 +22,13 @@ export default function Footer() {
             <a href="#contact" className="hover:text-indigo-600 transition-colors">Contact</a>
           </nav>
 
-          {/* Right — copyright */}
-          <p className="text-xs text-slate-400">
-            © 2025 · Built with Next.js
-          </p>
+          {/* Right — copyright & deploy telemetry */}
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <DeployStatusBadge />
+            <p className="text-xs text-slate-400">
+              © 2026 · Built with Next.js
+            </p>
+          </div>
         </div>
       </div>
     </footer>
