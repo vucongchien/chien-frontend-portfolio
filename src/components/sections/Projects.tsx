@@ -1,4 +1,3 @@
-import ProjectCard from "../ProjectCard";
 import ProjectRow from "../ProjectRow";
 
 export default function Projects() {

@@ -11,7 +11,6 @@ const TITLES = [
 const TYPING_SPEED = 80;
 const DELETING_SPEED = 40;
 const PAUSE_AFTER_TYPE = 2000;
-const PAUSE_AFTER_DELETE = 400;
 
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState("");

@@ -8,14 +8,7 @@ import { useEffect, useState } from "react";
  * Tham khảo: hình user gửi — các gạch ngang nhỏ bên phải
  */
 
-const SECTIONS = [
-  { id: "hero", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
-];
-
 export default function ScrollIndicator() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -24,17 +17,6 @@ export default function ScrollIndicator() {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = docHeight > 0 ? scrollTop / docHeight : 0;
       setScrollProgress(Math.min(progress, 1));
-
-      // Determine active section
-      const viewportMiddle = scrollTop + window.innerHeight / 2;
-      const docTotal = document.documentElement.scrollHeight;
-      const sectionHeight = docTotal / SECTIONS.length;
-
-      const index = Math.min(
-        Math.floor(viewportMiddle / sectionHeight),
-        SECTIONS.length - 1
-      );
-      setActiveIndex(index);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
