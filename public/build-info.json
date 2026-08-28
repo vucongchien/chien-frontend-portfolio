@@ -1,14 +1,38 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-28T09:02:02.732Z",
+  "buildTime": "2026-08-28T09:16:47.254Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "3ae0ceb",
-    "message": "Merge branch 'main' of https://github.com/vucongchien/chien-frontend-portfolio",
+    "hash": "975ab9b",
+    "message": "test(e2e): cấu hình playwright và kịch bản kiểm thử user flow",
     "author": "Vucongchien",
-    "date": "2026-04-13 22:10:29 +0700"
+    "date": "2026-08-28 16:09:28 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "975ab9b",
+      "message": "test(e2e): cấu hình playwright và kịch bản kiểm thử user flow",
+      "author": "Vucongchien",
+      "date": "2026-08-28 16:09:28 +0700"
+    },
+    {
+      "hash": "c784e79",
+      "message": "ci(actions): tích hợp oxlint, typecheck và github actions workflow",
+      "author": "Vucongchien",
+      "date": "2026-08-28 16:08:25 +0700"
+    },
+    {
+      "hash": "975df37",
+      "message": "feat(telemetry): thêm hệ thống build info và release history modal",
+      "author": "Vucongchien",
+      "date": "2026-08-28 16:08:05 +0700"
+    },
+    {
+      "hash": "1a44340",
+      "message": "refactor(core): dọn dẹp unused imports và tối ưu type safety",
+      "author": "Vucongchien",
+      "date": "2026-08-28 16:07:57 +0700"
+    },
     {
       "hash": "3ae0ceb",
       "message": "Merge branch 'main' of https://github.com/vucongchien/chien-frontend-portfolio",
