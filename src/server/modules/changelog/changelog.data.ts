@@ -1,4 +1,4 @@
-import { ChangelogItem } from "@/types";
+import type { ChangelogItem } from "@/types";
 
 export const changelogData: ChangelogItem[] = [
   {

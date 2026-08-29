@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Diamond from "./Diamond";
 import { cn } from "@/lib/utils";
 

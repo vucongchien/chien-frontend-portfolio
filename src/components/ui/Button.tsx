@@ -1,4 +1,4 @@
-import { ReactNode, MouseEventHandler } from "react";
+import type { ReactNode, MouseEventHandler } from "react";
 import { cn } from "@/lib/utils";
 
 export type ButtonVariant = "primary" | "outline" | "ghost" | "secondary";

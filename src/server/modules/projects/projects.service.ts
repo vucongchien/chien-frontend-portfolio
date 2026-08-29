@@ -1,5 +1,5 @@
 import { projectsData } from "./projects.data";
-import { Project } from "@/types";
+import type { Project } from "@/types";
 
 export function getProjects(): Project[] {
   return projectsData;
