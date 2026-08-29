@@ -7,18 +7,12 @@
     "prebuild": "node scripts/generate-changelog.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "agent-lint scan",
-    "lint:fast": "agent-lint scan --only=craft,tokens,arch && oxlint src",
-    "lint:agent": "agent-lint scan --format=agent",
-    "lint:fix": "agent-lint fix",
-    "gate": "agent-lint gate",
-    "gate:compare": "agent-lint compare",
-    "gate:dashboard": "agent-lint dashboard",
+    "lint": "eslint",
+    "lint:fast": "oxlint src --deny-warnings",
     "typecheck": "tsc --noEmit",
     "test": "playwright test",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:unit": "vitest run"
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
@@ -31,7 +25,6 @@
     "zod": "^4.5.2"
   },
   "devDependencies": {
-    "agent-lint": "file:../agent-lint/agent-lint-0.1.0.tgz",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^7.0.1",
