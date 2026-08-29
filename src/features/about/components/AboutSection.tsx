@@ -21,7 +21,7 @@ export default function AboutSection() {
 
           {/* AI Intro bubble */}
           <FadeInOnScroll animation="slideInLeft">
-            <ChatBubble role="ai" variant="white" size="2xl">
+            <ChatBubble sender="ai" variant="white" size="2xl">
               <h3 className="text-base font-semibold text-slate-800">
                 Hey there 👋
               </h3>
@@ -59,7 +59,7 @@ export default function AboutSection() {
 
           {/* User question */}
           <FadeInOnScroll animation="slideInRight">
-            <ChatBubble role="user" variant="indigo">
+            <ChatBubble sender="user" variant="indigo">
               <p className="text-indigo-700">
                 I want to see chien&apos;s project
               </p>
@@ -68,7 +68,7 @@ export default function AboutSection() {
 
           {/* AI answer: Projects */}
           <FadeInOnScroll animation="slideInLeft">
-            <ChatBubble role="ai" variant="slate" size="4xl">
+            <ChatBubble sender="ai" variant="slate" size="4xl">
               <Badge variant="pill-white">
                 I have three projects 🚀
               </Badge>
@@ -90,14 +90,14 @@ export default function AboutSection() {
 
           {/* User question */}
           <FadeInOnScroll animation="slideInRight">
-            <ChatBubble role="user" variant="white">
+            <ChatBubble sender="user" variant="white">
               <p className="text-indigo-700">What skills does chien have?</p>
             </ChatBubble>
           </FadeInOnScroll>
 
           {/* AI answer: Skills */}
           <FadeInOnScroll animation="slideInLeft">
-            <ChatBubble role="ai" variant="white" size="5xl">
+            <ChatBubble sender="ai" variant="white" size="5xl">
               <Badge variant="pill-slate">
                 Here are my skills ⚡
               </Badge>

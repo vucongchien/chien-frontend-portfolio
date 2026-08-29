@@ -1,0 +1,52 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "nextjs",
+    "import",
+    "promise",
+    "typescript",
+    "unicorn",
+    "oxc"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn"
+  },
+  "ignorePatterns": [
+    "node_modules",
+    ".next",
+    ".agents",
+    "dist",
+    "build",
+    "public",
+    "scripts"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/button-has-type": "off",
+    "react/jsx-no-target-blank": "error",
+    "react/no-children-prop": "error",
+    "react/jsx-key": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": "error",
+    "react/void-dom-elements-no-children": "error",
+    "nextjs/no-img-element": "warn",
+    "nextjs/no-html-link-for-pages": "off",
+    "jsx-a11y/alt-text": "error",
+    "jsx-a11y/aria-role": "error",
+    "jsx-a11y/role-has-required-aria-props": "error",
+    "jsx-a11y/heading-has-content": "error",
+    "import/no-unassigned-import": "off",
+    "typescript/no-explicit-any": "warn",
+    "typescript/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+    "unicorn/prefer-module": "off",
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "no-underscore-dangle": "off"
+  }
+}

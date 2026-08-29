@@ -1,73 +1,73 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-29T07:36:27.156Z",
+  "buildTime": "2026-08-29T07:56:56.670Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "9444261",
-    "message": "chore(build): update build-info metadata",
+    "hash": "5cdf316",
+    "message": "chore(lint): configure agent-lint with dynamic DTCG tokens and Vercel taste rules",
     "author": "Vucongchien",
-    "date": "2026-08-29 14:35:09 +0700"
+    "date": "2026-08-29 14:46:27 +0700"
   },
   "recentCommits": [
     {
-      "hash": "9444261",
+      "hash": "5cdf316",
+      "message": "chore(lint): configure agent-lint with dynamic DTCG tokens and Vercel taste rules",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:46:27 +0700"
+    },
+    {
+      "hash": "ec32ebe",
+      "message": "chore: trigger production deployment",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:45:35 +0700"
+    },
+    {
+      "hash": "d24e1a1",
+      "message": "Merge pull request #8 from vucongchien/fix/ci-dependencies",
+      "author": "chiến",
+      "date": "2026-08-29 14:44:15 +0700"
+    },
+    {
+      "hash": "fe0f454",
+      "message": "fix(ci): remove local agent-lint dependency and fix frozen lockfile",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:44:05 +0700"
+    },
+    {
+      "hash": "7f761f1",
+      "message": "Merge pull request #7 from vucongchien/chore/agent-testing-rules",
+      "author": "chiến",
+      "date": "2026-08-29 14:41:52 +0700"
+    },
+    {
+      "hash": "e95122b",
+      "message": "chore(testing): remove token unit test and restrict test rules to business logic only",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:37:54 +0700"
+    },
+    {
+      "hash": "70c6854",
+      "message": "Merge pull request #6 from vucongchien/chore/build-info-update",
+      "author": "chiến",
+      "date": "2026-08-29 14:41:20 +0700"
+    },
+    {
+      "hash": "e2bfe25",
       "message": "chore(build): update build-info metadata",
       "author": "Vucongchien",
       "date": "2026-08-29 14:35:09 +0700"
     },
     {
-      "hash": "543be1c",
-      "message": "test(tokens): add unit tests and test catalog documentation for design tokens",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:35:06 +0700"
+      "hash": "17b8153",
+      "message": "Merge pull request #5 from vucongchien/feat/design-tokens-w3c-dtcg",
+      "author": "chiến",
+      "date": "2026-08-29 14:41:01 +0700"
     },
     {
-      "hash": "5faad42",
+      "hash": "77c86e5",
       "message": "feat(design-system): redesign tokens to W3C DTCG 3-tier standard with Tailwind v4 inline theme",
       "author": "Vucongchien",
       "date": "2026-08-29 14:35:04 +0700"
-    },
-    {
-      "hash": "326b38e",
-      "message": "feat(server): add shared infrastructure and server-only database utilities",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:35:01 +0700"
-    },
-    {
-      "hash": "5a2a52c",
-      "message": "chore(tooling): add skills, agent configurations and dependencies",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:34:53 +0700"
-    },
-    {
-      "hash": "21e2e15",
-      "message": "refactor(skills): replace hardcoded pixels with tailwind tokens in SkillCard",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:00:25 +0700"
-    },
-    {
-      "hash": "e898921",
-      "message": "refactor(ui): standardize component variants and optimize rsc boundaries (#2)",
-      "author": "chiến",
-      "date": "2026-08-29 13:31:31 +0700"
-    },
-    {
-      "hash": "625dec8",
-      "message": "Merge pull request #1 from vucongchien/refactor/architecture-restructure",
-      "author": "chiến",
-      "date": "2026-08-29 13:20:41 +0700"
-    },
-    {
-      "hash": "0475da6",
-      "message": "refactor(arch): restructure to feature-driven frontend & server modules with centralized design tokens",
-      "author": "Vucongchien",
-      "date": "2026-08-28 20:21:22 +0700"
-    },
-    {
-      "hash": "6345dbe",
-      "message": "fix(ci): remove unused Link import in Footer to pass oxlint CI",
-      "author": "Vucongchien",
-      "date": "2026-08-28 17:54:24 +0700"
     }
   ]
 }
