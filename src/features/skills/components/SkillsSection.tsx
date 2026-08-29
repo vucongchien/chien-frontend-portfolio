@@ -1,5 +1,3 @@
-"use client";
-
 import { getSkillCategories } from "@/server/modules/skills/skills.service";
 import SkillCard from "./SkillCard";
 
@@ -74,11 +72,10 @@ export default function SkillsSection() {
 
                 {/* Skill Cards - flex wrap for natural reflow */}
                 <div className="flex flex-wrap gap-3 sm:gap-4">
-                  {category.skills.map((skill, skillIdx) => (
+                  {category.skills.map((skill) => (
                     <SkillCard
                       key={skill.name}
                       skill={skill}
-                      index={skillIdx}
                     />
                   ))}
                 </div>

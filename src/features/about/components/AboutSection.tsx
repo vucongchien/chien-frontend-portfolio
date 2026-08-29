@@ -1,8 +1,10 @@
-import Image from "next/image";
 import ProjectsSection from "@/features/projects/components/ProjectsSection";
 import SkillsSection from "@/features/skills/components/SkillsSection";
 import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
-import Diamond from "@/components/ui/Diamond";
+import SectionHeading from "@/components/ui/SectionHeading";
+import SectionDivider from "@/components/ui/SectionDivider";
+import ChatBubble from "@/components/ui/ChatBubble";
+import Badge from "@/components/ui/Badge";
 
 export default function AboutSection() {
   return (
@@ -14,26 +16,12 @@ export default function AboutSection() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
           {/* Section heading */}
           <FadeInOnScroll animation="fadeInUp" className="mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 inline-flex items-center gap-2">
-              About me
-              <Diamond size="sm" color="indigo" />
-            </h2>
+            <SectionHeading>About me</SectionHeading>
           </FadeInOnScroll>
 
-          {/* AI Intro bubble — slide from LEFT */}
-          <FadeInOnScroll
-            animation="slideInLeft"
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <div className="w-10 h-10 sm:w-14 sm:h-14 shrink-0 rounded-full overflow-hidden border border-slate-200">
-              <Image
-                src="/undraw_refreshing-beverage_w8al.svg"
-                alt="avatar"
-                width={56}
-                height={56}
-              />
-            </div>
-            <div className="min-w-0 max-w-2xl rounded-2xl bg-white border border-slate-200 p-4 sm:p-6 space-y-4">
+          {/* AI Intro bubble */}
+          <FadeInOnScroll animation="slideInLeft">
+            <ChatBubble role="ai" variant="white" size="2xl">
               <h3 className="text-base font-semibold text-slate-800">
                 Hey there 👋
               </h3>
@@ -42,11 +30,11 @@ export default function AboutSection() {
                 <span className="font-bold text-indigo-600">
                   Vũ Công Chiến
                 </span>
-                , a Software Engineering focused on building modern web
+                , a Software Engineer focused on building modern web
                 applications.
               </p>
               <p className="text-slate-600">
-                I enjoy working with <b>AI Agents</b>, to deverlop frontend with{" "}
+                I enjoy working with <b>AI Agents</b>, developing frontend with{" "}
                 <b>React</b>, <b>Next.js</b> and backend with <b>Node.js</b>,{" "}
                 <b>FastAPI</b>, exploring clean UI architecture, performance
                 optimization and scalable design systems.
@@ -54,7 +42,7 @@ export default function AboutSection() {
               <p className="text-slate-500">
                 Student at PTIT University — Software Engineering
               </p>
-            </div>
+            </ChatBubble>
           </FadeInOnScroll>
         </div>
       </section>
@@ -66,56 +54,26 @@ export default function AboutSection() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
           {/* Divider */}
           <FadeInOnScroll animation="fadeIn">
-            <div className="flex items-center gap-4">
-              <div className="flex-1 h-px bg-slate-200" />
-              <Diamond size="xs" color="indigo-light" />
-              <span className="text-xs text-slate-400 font-mono">projects</span>
-              <Diamond size="xs" color="indigo-light" />
-              <div className="flex-1 h-px bg-slate-200" />
-            </div>
+            <SectionDivider label="projects" variant="slate" />
           </FadeInOnScroll>
 
-          {/* User question — slide from RIGHT */}
-          <FadeInOnScroll
-            animation="slideInRight"
-            className="flex sm:flex-row items-end sm:items-center justify-end gap-4"
-          >
-            <div className="max-w-2xl rounded-2xl bg-indigo-50 border border-indigo-100 px-6 py-2 h-fit my-auto">
+          {/* User question */}
+          <FadeInOnScroll animation="slideInRight">
+            <ChatBubble role="user" variant="indigo">
               <p className="text-indigo-700">
                 I want to see chien&apos;s project
               </p>
-            </div>
-            <div className="w-10 h-10 sm:w-14 sm:h-14 shrink-0 rounded-full overflow-hidden border border-slate-200">
-              <Image
-                src="/undraw_refreshing-beverage_w8al.svg"
-                alt="avatar"
-                width={56}
-                height={56}
-              />
-            </div>
+            </ChatBubble>
           </FadeInOnScroll>
 
-          {/* AI answer: Projects — slide from LEFT */}
-          <FadeInOnScroll
-            animation="slideInLeft"
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <div className="w-10 h-10 sm:w-14 sm:h-14 shrink-0 rounded-full overflow-hidden border border-slate-200">
-              <Image
-                src="/undraw_refreshing-beverage_w8al.svg"
-                alt="avatar"
-                width={56}
-                height={56}
-              />
-            </div>
-            <div className="min-w-0 w-full sm:max-w-4xl rounded-2xl bg-slate-50 border border-slate-200 p-4 sm:p-6 space-y-4">
-              <div className="px-4 py-1.5 border border-slate-200 w-fit rounded-full bg-white">
-                <p className="text-sm text-slate-600">
-                  I have three projects 🚀
-                </p>
-              </div>
+          {/* AI answer: Projects */}
+          <FadeInOnScroll animation="slideInLeft">
+            <ChatBubble role="ai" variant="slate" size="4xl">
+              <Badge variant="pill-white">
+                I have three projects 🚀
+              </Badge>
               <ProjectsSection />
-            </div>
+            </ChatBubble>
           </FadeInOnScroll>
         </div>
       </section>
@@ -127,52 +85,24 @@ export default function AboutSection() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
           {/* Divider */}
           <FadeInOnScroll animation="fadeIn">
-            <div className="flex items-center gap-4">
-              <div className="flex-1 h-px bg-indigo-200" />
-              <Diamond size="xs" color="indigo-light" />
-              <span className="text-xs text-indigo-400 font-mono">skills</span>
-              <Diamond size="xs" color="indigo-light" />
-              <div className="flex-1 h-px bg-indigo-200" />
-            </div>
+            <SectionDivider label="skills" variant="indigo" />
           </FadeInOnScroll>
 
-          {/* User question — slide from RIGHT */}
-          <FadeInOnScroll
-            animation="slideInRight"
-            className="flex flex-col-reverse sm:flex-row items-end sm:items-center justify-end gap-4"
-          >
-            <div className="max-w-2xl rounded-2xl bg-white border border-indigo-100 px-6 py-2 h-fit my-auto">
+          {/* User question */}
+          <FadeInOnScroll animation="slideInRight">
+            <ChatBubble role="user" variant="white">
               <p className="text-indigo-700">What skills does chien have?</p>
-            </div>
-            <div className="w-10 h-10 sm:w-14 sm:h-14 shrink-0 rounded-full overflow-hidden border border-slate-200">
-              <Image
-                src="/undraw_refreshing-beverage_w8al.svg"
-                alt="avatar"
-                width={56}
-                height={56}
-              />
-            </div>
+            </ChatBubble>
           </FadeInOnScroll>
 
-          {/* AI answer: Skills — slide from LEFT */}
-          <FadeInOnScroll
-            animation="slideInLeft"
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <div className="w-10 h-10 sm:w-14 sm:h-14 shrink-0 rounded-full overflow-hidden border border-slate-200">
-              <Image
-                src="/undraw_refreshing-beverage_w8al.svg"
-                alt="avatar"
-                width={56}
-                height={56}
-              />
-            </div>
-            <div className="min-w-0 w-full sm:max-w-5xl rounded-2xl bg-white border border-slate-200 p-4 sm:p-6 space-y-4">
-              <div className="px-4 py-1.5 border border-slate-200 w-fit rounded-full bg-slate-50">
-                <p className="text-sm text-slate-600">Here are my skills ⚡</p>
-              </div>
+          {/* AI answer: Skills */}
+          <FadeInOnScroll animation="slideInLeft">
+            <ChatBubble role="ai" variant="white" size="5xl">
+              <Badge variant="pill-slate">
+                Here are my skills ⚡
+              </Badge>
               <SkillsSection />
-            </div>
+            </ChatBubble>
           </FadeInOnScroll>
         </div>
       </section>

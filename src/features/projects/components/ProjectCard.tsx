@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Diamond from "@/components/ui/Diamond";
+import Badge from "@/components/ui/Badge";
 
 interface ProjectCardProps {
   title: string;
@@ -53,20 +54,9 @@ export default function ProjectCard({
           {/* Tech Chips */}
           <div className="flex flex-wrap gap-1.5">
             {tech.map((t) => (
-              <span
-                key={t}
-                className="
-                  inline-flex items-center rounded-full
-                  bg-slate-100 px-2 py-0.5
-                  text-[10px] sm:text-xs font-medium text-slate-600
-                  border border-slate-200/60
-                  transition-colors duration-200
-                  group-hover:bg-indigo-50 group-hover:text-indigo-700
-                  group-hover:border-indigo-200/60
-                "
-              >
+              <Badge key={t} variant="tech">
                 {t}
-              </span>
+              </Badge>
             ))}
           </div>
         </div>

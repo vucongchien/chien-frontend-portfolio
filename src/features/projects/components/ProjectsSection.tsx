@@ -1,8 +1,18 @@
 import ProjectRow from "./ProjectRow";
 import { getProjects } from "@/server/modules/projects/projects.service";
+import Badge from "@/components/ui/Badge";
+import Button from "@/components/ui/Button";
 
 export default function ProjectsSection() {
   const projects = getProjects();
+
+  if (!projects || projects.length === 0) {
+    return (
+      <section id="projects" className="py-12 text-center">
+        <p className="text-slate-400 text-sm">Chưa có dữ liệu dự án.</p>
+      </section>
+    );
+  }
 
   return (
     <section id="projects">
@@ -14,10 +24,10 @@ export default function ProjectsSection() {
               <div className="absolute inset-0 rounded-2xl bg-slate-200 translate-y-0.5" />
               <div className="relative z-10 p-4 sm:p-6 rounded-2xl border border-slate-200 bg-white transition-colors duration-300">
                 {/* Period Badge */}
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 mb-4 text-xs font-medium text-indigo-600 border border-indigo-100">
+                <Badge variant="period" className="mb-4">
                   <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
                   {project.period}
-                </span>
+                </Badge>
 
                 <ProjectRow
                   title={project.title}
@@ -28,26 +38,7 @@ export default function ProjectsSection() {
                   <div className="space-y-4 max-w-lg break-words">
                     {/* Description */}
                     <p className="text-slate-600">
-                      {project.id === "ecommerce-ai-agent" ? (
-                        <>
-                          Web bán hàng tích hợp{" "}
-                          <b className="text-slate-800">AI Agent</b> tư vấn sản
-                          phẩm cho khách hàng, hỗ trợ trải nghiệm mua sắm thông
-                          minh.
-                        </>
-                      ) : project.id === "interactive-novel" ? (
-                        <>
-                          Website cho phép tạo câu chuyện được sinh ra bởi{" "}
-                          <b className="text-slate-800">AI</b>, người dùng có thể
-                          dẫn dắt mạch truyện theo ý muốn.
-                        </>
-                      ) : (
-                        <>
-                          Website giới thiệu bộ anime{" "}
-                          <b className="text-slate-800">My Dress Up Darling</b>{" "}
-                          với giao diện đẹp mắt và trải nghiệm trực quan.
-                        </>
-                      )}
+                      {project.description}
                     </p>
 
                     {/* Roles */}
@@ -75,24 +66,24 @@ export default function ProjectsSection() {
                     {/* Links */}
                     <div className="flex gap-3 pt-3">
                       {project.liveUrl && (
-                        <a
+                        <Button
+                          variant="primary"
+                          size="sm"
                           href={project.liveUrl}
                           target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white transition-all duration-200 hover:bg-indigo-500 hover:shadow-md"
                         >
                           Live Demo ↗
-                        </a>
+                        </Button>
                       )}
                       {project.githubUrl && (
-                        <a
+                        <Button
+                          variant="ghost"
+                          size="sm"
                           href={project.githubUrl}
                           target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition-all duration-200 hover:bg-slate-50 hover:border-indigo-200 hover:text-indigo-600"
                         >
                           GitHub
-                        </a>
+                        </Button>
                       )}
                     </div>
                   </div>

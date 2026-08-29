@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-y-hidden">
+    <main className="min-h-screen overflow-x-hidden">
       <ScrollIndicator />
       <HeroSection />
       <AboutSection />

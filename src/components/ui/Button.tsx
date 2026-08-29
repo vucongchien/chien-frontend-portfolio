@@ -1,21 +1,34 @@
-import { ReactNode } from "react";
+import { ReactNode, MouseEventHandler } from "react";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "outline" | "ghost" | "secondary";
-type ButtonSize = "sm" | "md" | "lg";
+export type ButtonVariant = "primary" | "outline" | "ghost" | "secondary";
+export type ButtonSize = "sm" | "md" | "lg";
 
-interface ButtonProps {
+interface BaseButtonProps {
   children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  href?: string;
-  target?: string;
-  rel?: string;
-  onClick?: () => void;
   className?: string;
-  type?: "button" | "submit" | "reset";
   disabled?: boolean;
 }
+
+interface ButtonAsAnchorProps extends BaseButtonProps {
+  href: string;
+  target?: string;
+  rel?: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  type?: never;
+}
+
+interface ButtonAsNormalProps extends BaseButtonProps {
+  href?: never;
+  target?: never;
+  rel?: never;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  type?: "button" | "submit" | "reset";
+}
+
+export type ButtonProps = ButtonAsAnchorProps | ButtonAsNormalProps;
 
 const variantMap: Record<ButtonVariant, string> = {
   primary:
@@ -38,15 +51,11 @@ export default function Button({
   children,
   variant = "primary",
   size = "md",
-  href,
-  target,
-  rel,
-  onClick,
   className,
-  type = "button",
   disabled,
+  ...props
 }: ButtonProps) {
-  const classes = cn(
+  const commonClasses = cn(
     "inline-flex items-center justify-center gap-2 cursor-pointer font-medium select-none",
     variantMap[variant],
     sizeMap[size],
@@ -54,20 +63,28 @@ export default function Button({
     className
   );
 
-  if (href) {
+  if ("href" in props && props.href) {
+    const { href, target, rel, onClick } = props;
     return (
-      <a href={href} target={target} rel={rel} className={classes}>
+      <a
+        href={href}
+        target={target}
+        rel={target === "_blank" && !rel ? "noopener noreferrer" : rel}
+        onClick={onClick}
+        className={commonClasses}
+      >
         {children}
       </a>
     );
   }
 
+  const { type = "button", onClick } = props as ButtonAsNormalProps;
   return (
     <button
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={classes}
+      className={commonClasses}
     >
       {children}
     </button>

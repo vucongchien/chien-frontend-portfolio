@@ -1,24 +1,23 @@
-"use client";
-
 import { Skill } from "@/types";
 
 interface SkillCardProps {
   skill: Skill;
-  index: number;
 }
 
-export default function SkillCard({ skill, index }: SkillCardProps) {
+export default function SkillCard({ skill }: SkillCardProps) {
   const levelDots = Array.from({ length: 5 }, (_, i) => i < skill.level);
 
   return (
-    <div className="group relative w-[70px] sm:w-[90px]">
+    <div
+      className="group relative w-[70px] sm:w-[90px]"
+      aria-label={`Kỹ năng ${skill.name}, mức độ ${skill.level} trên 5`}
+    >
       {/* 3D Block — lighter for small cards */}
       <div
         className="
           absolute inset-0 rounded-xl bg-slate-200
           translate-x-1 translate-y-1
         "
-        style={{ animationDelay: `${index * 60}ms` }}
       />
 
       {/* Card */}
@@ -29,7 +28,6 @@ export default function SkillCard({ skill, index }: SkillCardProps) {
           transition-colors duration-300 ease-out
           group-hover:border-indigo-300
         "
-        style={{ animationDelay: `${index * 60}ms` }}
       >
         {/* Glow effect on hover */}
         <div
