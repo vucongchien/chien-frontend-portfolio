@@ -1,14 +1,32 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-29T06:18:11.525Z",
+  "buildTime": "2026-08-29T07:33:51.992Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "0475da6",
-    "message": "refactor(arch): restructure to feature-driven frontend & server modules with centralized design tokens",
+    "hash": "21e2e15",
+    "message": "refactor(skills): replace hardcoded pixels with tailwind tokens in SkillCard",
     "author": "Vucongchien",
-    "date": "2026-08-28 20:21:22 +0700"
+    "date": "2026-08-29 14:00:25 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "21e2e15",
+      "message": "refactor(skills): replace hardcoded pixels with tailwind tokens in SkillCard",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:00:25 +0700"
+    },
+    {
+      "hash": "e898921",
+      "message": "refactor(ui): standardize component variants and optimize rsc boundaries (#2)",
+      "author": "chiến",
+      "date": "2026-08-29 13:31:31 +0700"
+    },
+    {
+      "hash": "625dec8",
+      "message": "Merge pull request #1 from vucongchien/refactor/architecture-restructure",
+      "author": "chiến",
+      "date": "2026-08-29 13:20:41 +0700"
+    },
     {
       "hash": "0475da6",
       "message": "refactor(arch): restructure to feature-driven frontend & server modules with centralized design tokens",
@@ -50,24 +68,6 @@
       "message": "ci(actions): tích hợp oxlint, typecheck và github actions workflow",
       "author": "Vucongchien",
       "date": "2026-08-28 16:08:25 +0700"
-    },
-    {
-      "hash": "975df37",
-      "message": "feat(telemetry): thêm hệ thống build info và release history modal",
-      "author": "Vucongchien",
-      "date": "2026-08-28 16:08:05 +0700"
-    },
-    {
-      "hash": "1a44340",
-      "message": "refactor(core): dọn dẹp unused imports và tối ưu type safety",
-      "author": "Vucongchien",
-      "date": "2026-08-28 16:07:57 +0700"
-    },
-    {
-      "hash": "3ae0ceb",
-      "message": "Merge branch 'main' of https://github.com/vucongchien/chien-frontend-portfolio",
-      "author": "Vucongchien",
-      "date": "2026-04-13 22:10:29 +0700"
     }
   ]
 }
