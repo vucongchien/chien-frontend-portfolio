@@ -5,9 +5,10 @@
 - Trả lời và giao tiếp bằng tiếng Việt.
 
 ## 2. Quy định về Kiểm thử (Testing Rules)
-- **Tập trung vào E2E Testing (Playwright):** Ưu tiên viết và duy trì các bài kiểm thử End-to-End cho các luồng trải nghiệm chính của người dùng thực tế trên trình duyệt.
-- **KHÔNG viết Unit Test kiểm tra hiển thị UI đơn giản:** Tránh viết các unit test chỉ để kiểm tra việc render component, click button đơn giản, hoặc text hiển thị.
-- **Unit Test chỉ viết khi THỰC SỰ CẦN THIẾT:** Chỉ viết unit test khi có logic tính toán, thuật toán phức tạp, hoặc khi người dùng có yêu cầu cụ thể.
+- **CHỈ viết Test khi THỰC SỰ LIÊN QUAN ĐẾN NGHIỆP VỤ (Business Logic):**
+  - Chỉ viết unit/integration test cho logic tính toán, thuật toán xử lý dữ liệu phức tạp, Server validation / schemas, hoặc các services nghiệp vụ quan trọng.
+  - **CẤM viết test thừa cho:** Design Tokens, Types/Interfaces, CSS/Style, Static UI rendering, hoặc các thao tác đơn giản không có logic nghiệp vụ. Dự án thường xuyên refactor nên tuyệt đối tránh các test gây cản trở và lãng phí thời gian bảo trì.
+- **Tập trung vào E2E Testing (Playwright):** Ưu tiên duy trì các bài kiểm thử End-to-End cho các luồng trải nghiệm chính của người dùng thực tế trên trình duyệt.
 - Mọi tài liệu và mục lục kịch bản test đặt trong thư mục `tests/e2e/README.md`.
 
 ## 3. Tư duy Hệ thống (System Thinking) & Chất lượng Code

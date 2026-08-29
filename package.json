@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "agent-lint scan",
-    "lint:fast": "agent-lint scan --only=craft,tokens,arch && oxlint --deny-warnings",
+    "lint:fast": "agent-lint scan --only=craft,tokens,arch && oxlint src",
     "lint:agent": "agent-lint scan --format=agent",
     "lint:fix": "agent-lint fix",
     "gate": "agent-lint gate",

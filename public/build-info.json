@@ -1,14 +1,44 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-29T07:33:51.992Z",
+  "buildTime": "2026-08-29T07:36:27.156Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "21e2e15",
-    "message": "refactor(skills): replace hardcoded pixels with tailwind tokens in SkillCard",
+    "hash": "9444261",
+    "message": "chore(build): update build-info metadata",
     "author": "Vucongchien",
-    "date": "2026-08-29 14:00:25 +0700"
+    "date": "2026-08-29 14:35:09 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "9444261",
+      "message": "chore(build): update build-info metadata",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:35:09 +0700"
+    },
+    {
+      "hash": "543be1c",
+      "message": "test(tokens): add unit tests and test catalog documentation for design tokens",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:35:06 +0700"
+    },
+    {
+      "hash": "5faad42",
+      "message": "feat(design-system): redesign tokens to W3C DTCG 3-tier standard with Tailwind v4 inline theme",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:35:04 +0700"
+    },
+    {
+      "hash": "326b38e",
+      "message": "feat(server): add shared infrastructure and server-only database utilities",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:35:01 +0700"
+    },
+    {
+      "hash": "5a2a52c",
+      "message": "chore(tooling): add skills, agent configurations and dependencies",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:34:53 +0700"
+    },
     {
       "hash": "21e2e15",
       "message": "refactor(skills): replace hardcoded pixels with tailwind tokens in SkillCard",
@@ -38,36 +68,6 @@
       "message": "fix(ci): remove unused Link import in Footer to pass oxlint CI",
       "author": "Vucongchien",
       "date": "2026-08-28 17:54:24 +0700"
-    },
-    {
-      "hash": "ad1a210",
-      "message": "feat(contact): optimize contact chat input with Gmail compose popup and fix hydration error",
-      "author": "Vucongchien",
-      "date": "2026-08-28 17:32:53 +0700"
-    },
-    {
-      "hash": "1f14bf5",
-      "message": "feat(changelog): hoàn thiện trang changelog tối giản và cập nhật design rules",
-      "author": "Vucongchien",
-      "date": "2026-08-28 16:54:03 +0700"
-    },
-    {
-      "hash": "088cf10",
-      "message": "chore(deps): nâng cấp nextjs và eslint-config-next lên v16.3.3",
-      "author": "Vucongchien",
-      "date": "2026-08-28 16:17:02 +0700"
-    },
-    {
-      "hash": "975ab9b",
-      "message": "test(e2e): cấu hình playwright và kịch bản kiểm thử user flow",
-      "author": "Vucongchien",
-      "date": "2026-08-28 16:09:28 +0700"
-    },
-    {
-      "hash": "c784e79",
-      "message": "ci(actions): tích hợp oxlint, typecheck và github actions workflow",
-      "author": "Vucongchien",
-      "date": "2026-08-28 16:08:25 +0700"
     }
   ]
 }
