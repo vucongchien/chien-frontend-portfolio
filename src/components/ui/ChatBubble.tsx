@@ -2,12 +2,14 @@ import { ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-export type ChatBubbleRole = "ai" | "user";
+export type ChatBubbleSender = "ai" | "user";
+export type ChatBubbleRole = ChatBubbleSender;
 export type ChatBubbleVariant = "white" | "slate" | "indigo";
 export type ChatBubbleSize = "2xl" | "4xl" | "5xl" | "full";
 
 interface ChatBubbleProps {
-  role: ChatBubbleRole;
+  sender?: ChatBubbleSender;
+  role?: ChatBubbleSender;
   variant?: ChatBubbleVariant;
   size?: ChatBubbleSize;
   avatarSrc?: string;
@@ -34,6 +36,7 @@ const sizeVariants: Record<ChatBubbleSize, string> = {
 };
 
 export default function ChatBubble({
+  sender,
   role,
   variant,
   size = "5xl",
@@ -42,7 +45,8 @@ export default function ChatBubble({
   children,
   className,
 }: ChatBubbleProps) {
-  if (role === "user") {
+  const activeSender = sender || role || "ai";
+  if (activeSender === "user") {
     const userVariantKey = (variant as "indigo" | "white") || "indigo";
     const bubbleClass = userVariants[userVariantKey] || userVariants.indigo;
 

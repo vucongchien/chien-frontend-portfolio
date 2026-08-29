@@ -1,0 +1,83 @@
+version: "1.0"
+preset: "nextjs"
+
+target:
+  include:
+    - "src/**/*.{tsx,jsx,ts,js}"
+  exclude:
+    - "**/*.test.{tsx,jsx,ts,js}"
+    - "**/*.spec.{tsx,jsx,ts,js}"
+    - "**/node_modules/**"
+    - "**/.next/**"
+    - "**/dist/**"
+    - "scripts/**"
+
+rules:
+  # 1. i18n (Tắt vì dự án không dùng thư viện đa ngôn ngữ runtime)
+  i18n:
+    enabled: false
+
+
+  # 2. Design Tokens (Tự động đọc từ src/config/tokens.ts)
+  design_tokens:
+    enabled: true
+    severity: "warn"
+    source_file: "src/config/tokens.ts"
+    enforce_components:
+      raw_button: "@/components/ui/Button"
+      raw_link: "next/link"
+
+  # 3. Clean Page Composition (Độ sâu JSX <= 3 tầng)
+  clean_composition:
+    enabled: true
+    severity: "warn"
+    targets:
+      - "src/app/**/page.{tsx,jsx}"
+      - "src/app/**/layout.{tsx,jsx}"
+    max_raw_jsx_depth: 3
+    max_raw_element_ratio: 0.4
+
+  # 4. Chống Trùng Lặp Giao Diện (Rule of Three)
+  component_deduplication:
+    enabled: true
+    severity: "warn"
+    min_occurrences: 3
+    min_element_count: 4
+    similarity_threshold: 0.8
+
+  # 5. Quản Trị Ranh Giới Server/Client & Bảo Vệ Database
+  architecture:
+    enabled: true
+    preset: "nextjs"
+    severity: "error"
+    allow_type_imports: true
+    server_client_boundary:
+      enabled: true
+      client_identifiers:
+        - '"use client"'
+        - "'use client'"
+      disallowed_imports:
+        - "@/server/shared/db"
+        - "@/server"
+        - "@neondatabase/serverless"
+        - "server-only"
+        - "fs"
+        - "path"
+
+  # 6. Thẩm Mỹ UI/UX, Dark Mode Integrity & Vercel Taste (23 Quy Luật)
+  design_craft:
+    enabled: true
+    severity: "warn"
+    no_decorative_floaters: true
+    no_gradient_text: true
+    no_missing_dark_mode: true
+    no_transition_all: true
+    no_bare_outline_none: true
+    no_monospace_costume: true
+    dark_mode_optical_compensation: true
+    optical_kerning: true
+    type_scale_jump: true
+    optical_centering: true
+    heading_text_balance: true
+    tabular_numbers: true
+    flex_truncate_min_w_0: true

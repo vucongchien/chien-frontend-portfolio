@@ -32,9 +32,9 @@ export default function ChangelogTimeline() {
             {/* Right Column: Clean Content Card */}
             <div className="rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-7 shadow-xs">
               <ul className="space-y-3">
-                {item.changes.map((change, cIdx) => (
+                {item.changes.map((change) => (
                   <li
-                    key={cIdx}
+                    key={`${item.version}-${change}`}
                     className="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed"
                   >
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500" />

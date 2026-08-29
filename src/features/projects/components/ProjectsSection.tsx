@@ -47,8 +47,8 @@ export default function ProjectsSection() {
                         Vai trò:
                       </p>
                       <ul className="list-disc list-inside text-sm space-y-1 text-slate-600">
-                        {project.roles.map((role, rIdx) => (
-                          <li key={rIdx}>{role}</li>
+                        {project.roles.map((role) => (
+                          <li key={`${project.id}-${role}`}>{role}</li>
                         ))}
                       </ul>
                     </div>
