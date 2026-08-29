@@ -1,14 +1,38 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-29T07:56:56.670Z",
+  "buildTime": "2026-08-29T08:18:09.757Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "5cdf316",
-    "message": "chore(lint): configure agent-lint with dynamic DTCG tokens and Vercel taste rules",
+    "hash": "564549d",
+    "message": "feat(linter): enable pedantic and style categories with clean refactoring",
     "author": "Vucongchien",
-    "date": "2026-08-29 14:46:27 +0700"
+    "date": "2026-08-29 15:16:49 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "564549d",
+      "message": "feat(linter): enable pedantic and style categories with clean refactoring",
+      "author": "Vucongchien",
+      "date": "2026-08-29 15:16:49 +0700"
+    },
+    {
+      "hash": "0f36b94",
+      "message": "Merge branch 'main' into development",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:57:28 +0700"
+    },
+    {
+      "hash": "6565d77",
+      "message": "Merge pull request #9 from vucongchien/feat/oxlint-full-power",
+      "author": "chiến",
+      "date": "2026-08-29 14:57:21 +0700"
+    },
+    {
+      "hash": "f9c6672",
+      "message": "feat(linter): adopt full-power Oxlint configuration with all plugins and remove ESLint",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:57:11 +0700"
+    },
     {
       "hash": "5cdf316",
       "message": "chore(lint): configure agent-lint with dynamic DTCG tokens and Vercel taste rules",
@@ -20,6 +44,12 @@
       "message": "chore: trigger production deployment",
       "author": "Vucongchien",
       "date": "2026-08-29 14:45:35 +0700"
+    },
+    {
+      "hash": "55c4570",
+      "message": "Merge branch 'main' into development",
+      "author": "Vucongchien",
+      "date": "2026-08-29 14:44:24 +0700"
     },
     {
       "hash": "d24e1a1",
@@ -34,40 +64,10 @@
       "date": "2026-08-29 14:44:05 +0700"
     },
     {
-      "hash": "7f761f1",
-      "message": "Merge pull request #7 from vucongchien/chore/agent-testing-rules",
-      "author": "chiến",
-      "date": "2026-08-29 14:41:52 +0700"
-    },
-    {
-      "hash": "e95122b",
-      "message": "chore(testing): remove token unit test and restrict test rules to business logic only",
+      "hash": "a46293a",
+      "message": "Merge branch 'main' into development",
       "author": "Vucongchien",
-      "date": "2026-08-29 14:37:54 +0700"
-    },
-    {
-      "hash": "70c6854",
-      "message": "Merge pull request #6 from vucongchien/chore/build-info-update",
-      "author": "chiến",
-      "date": "2026-08-29 14:41:20 +0700"
-    },
-    {
-      "hash": "e2bfe25",
-      "message": "chore(build): update build-info metadata",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:35:09 +0700"
-    },
-    {
-      "hash": "17b8153",
-      "message": "Merge pull request #5 from vucongchien/feat/design-tokens-w3c-dtcg",
-      "author": "chiến",
-      "date": "2026-08-29 14:41:01 +0700"
-    },
-    {
-      "hash": "77c86e5",
-      "message": "feat(design-system): redesign tokens to W3C DTCG 3-tier standard with Tailwind v4 inline theme",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:35:04 +0700"
+      "date": "2026-08-29 14:42:01 +0700"
     }
   ]
 }

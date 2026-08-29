@@ -7,6 +7,18 @@ import { useEffect, useState } from "react";
  * Hiển thị các dash marks cho biết vị trí scroll hiện tại
  */
 
+function getDashClass(isCurrent: boolean, isActive: boolean) {
+  if (isCurrent) {
+    return "w-1 h-5 bg-indigo-600";
+  }
+  if (isActive) {
+    return "w-0.5 h-3 bg-indigo-400";
+  }
+  return "w-0.5 h-3 bg-slate-300";
+}
+
+const TOTAL_DASHES = 8;
+
 export default function ScrollIndicator() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -24,29 +36,18 @@ export default function ScrollIndicator() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const totalDashes = 8;
-
   return (
     <div className="fixed right-4 sm:right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-2">
-      {Array.from({ length: totalDashes }, (_, i) => {
-        const dashProgress = i / totalDashes;
+      {Array.from({ length: TOTAL_DASHES }, (_, index) => {
+        const dashProgress = index / TOTAL_DASHES;
         const isActive = scrollProgress >= dashProgress;
         const isCurrent =
-          Math.abs(scrollProgress - dashProgress) < 1 / totalDashes;
+          Math.abs(scrollProgress - dashProgress) < 1 / TOTAL_DASHES;
 
         return (
           <div
-            key={i}
-            className={`
-              transition-all duration-300 rounded-full
-              ${
-                isCurrent
-                  ? "w-1 h-5 bg-indigo-600"
-                  : isActive
-                    ? "w-0.5 h-3 bg-indigo-400"
-                    : "w-0.5 h-3 bg-slate-300"
-              }
-            `}
+            key={index}
+            className={`transition-all duration-300 rounded-full ${getDashClass(isCurrent, isActive)}`}
           />
         );
       })}

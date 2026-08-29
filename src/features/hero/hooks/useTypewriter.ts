@@ -28,22 +28,12 @@ export function useTypewriter({
   }, []);
 
   useEffect(() => {
-    if (!titles.length) return;
+    if (titles.length === 0) {return;}
 
     const currentTitle = titles[titleIndex] || "";
 
     const tick = () => {
-      if (!isDeleting) {
-        if (displayText.length < currentTitle.length) {
-          setDisplayText(currentTitle.slice(0, displayText.length + 1));
-          timerRef.current = setTimeout(tick, typingSpeed);
-        } else {
-          // Pause when word complete, then delete
-          timerRef.current = setTimeout(() => {
-            setIsDeleting(true);
-          }, pauseAfterType);
-        }
-      } else {
+      if (isDeleting) {
         if (displayText.length > 0) {
           setDisplayText(currentTitle.slice(0, displayText.length - 1));
           timerRef.current = setTimeout(tick, deletingSpeed);
@@ -52,6 +42,14 @@ export function useTypewriter({
           setIsDeleting(false);
           setTitleIndex((prev) => (prev + 1) % titles.length);
         }
+      } else if (displayText.length < currentTitle.length) {
+        setDisplayText(currentTitle.slice(0, displayText.length + 1));
+        timerRef.current = setTimeout(tick, typingSpeed);
+      } else {
+        // Pause when word complete, then delete
+        timerRef.current = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseAfterType);
       }
     };
 

@@ -9,13 +9,13 @@ type AnimationType =
   | "slideInLeft"
   | "slideInRight";
 
-type Props = {
+interface Props {
   children: ReactNode;
   animation?: AnimationType;
   duration?: number;
   delay?: number;
   className?: string;
-};
+}
 
 export default function FadeInOnScroll({
   children,
@@ -29,7 +29,9 @@ export default function FadeInOnScroll({
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el) {
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
