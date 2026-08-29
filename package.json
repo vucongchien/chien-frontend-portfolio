@@ -7,8 +7,13 @@
     "prebuild": "node scripts/generate-changelog.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "lint:fast": "oxlint --deny-warnings",
+    "lint": "agent-lint scan",
+    "lint:fast": "agent-lint scan --only=craft,tokens,arch && oxlint --deny-warnings",
+    "lint:agent": "agent-lint scan --format=agent",
+    "lint:fix": "agent-lint fix",
+    "gate": "agent-lint gate",
+    "gate:compare": "agent-lint compare",
+    "gate:dashboard": "agent-lint dashboard",
     "typecheck": "tsc --noEmit",
     "test": "playwright test",
     "test:e2e": "playwright test",
@@ -16,13 +21,17 @@
     "test:unit": "vitest run"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
     "clsx": "^2.1.1",
+    "marked": "^18.0.11",
     "next": "^16.3.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "tailwind-merge": "^3.5.0"
+    "tailwind-merge": "^3.5.0",
+    "zod": "^4.5.2"
   },
   "devDependencies": {
+    "agent-lint": "file:../agent-lint/agent-lint-0.1.0.tgz",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^7.0.1",
@@ -31,6 +40,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.1.1",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "^16.3.3",
     "jsdom": "^30.0.1",
