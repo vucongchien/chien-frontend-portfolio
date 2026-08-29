@@ -1,5 +1,3 @@
-"use client";
-
 import { CONTACT_EMAIL } from "@/server/modules/contact/contact.service";
 import ContactInputBar from "./ContactInputBar";
 import Diamond from "@/components/ui/Diamond";
@@ -67,7 +65,7 @@ export default function ContactSection() {
 
         {/* Chat-style Interactive Input Bar */}
         <div className="max-w-2xl mx-auto">
-          <ContactInputBar />
+          <ContactInputBar recipientEmail={CONTACT_EMAIL} />
 
           {/* Quick info cards below - Original 3 Social Pills */}
           <div className="flex flex-wrap justify-center gap-3 mt-6">

@@ -1,13 +1,16 @@
 "use client";
 
 import { useState, useRef, FormEvent } from "react";
-import { CONTACT_EMAIL } from "@/server/modules/contact/contact.service";
 
 interface ContactInputBarProps {
+  recipientEmail?: string;
   onSend?: (message: string) => void;
 }
 
-export default function ContactInputBar({ onSend }: ContactInputBarProps) {
+export default function ContactInputBar({
+  recipientEmail = "vucongchien204@gmail.com",
+  onSend,
+}: ContactInputBarProps) {
   const [message, setMessage] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -29,7 +32,7 @@ Sent via vucongchien portfolio`;
     const encodedSubject = encodeURIComponent(subject);
     const encodedBody = encodeURIComponent(body);
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${CONTACT_EMAIL}&su=${encodedSubject}&body=${encodedBody}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${recipientEmail}&su=${encodedSubject}&body=${encodedBody}`;
 
     const width = 640;
     const height = 680;
