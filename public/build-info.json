@@ -1,14 +1,20 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-29T08:16:15.253Z",
+  "buildTime": "2026-08-29T08:18:09.757Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "0f36b94",
-    "message": "Merge branch 'main' into development",
+    "hash": "564549d",
+    "message": "feat(linter): enable pedantic and style categories with clean refactoring",
     "author": "Vucongchien",
-    "date": "2026-08-29 14:57:28 +0700"
+    "date": "2026-08-29 15:16:49 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "564549d",
+      "message": "feat(linter): enable pedantic and style categories with clean refactoring",
+      "author": "Vucongchien",
+      "date": "2026-08-29 15:16:49 +0700"
+    },
     {
       "hash": "0f36b94",
       "message": "Merge branch 'main' into development",
@@ -62,12 +68,6 @@
       "message": "Merge branch 'main' into development",
       "author": "Vucongchien",
       "date": "2026-08-29 14:42:01 +0700"
-    },
-    {
-      "hash": "7f761f1",
-      "message": "Merge pull request #7 from vucongchien/chore/agent-testing-rules",
-      "author": "chiến",
-      "date": "2026-08-29 14:41:52 +0700"
     }
   ]
 }
