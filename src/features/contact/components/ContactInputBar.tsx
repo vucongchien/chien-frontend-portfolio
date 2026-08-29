@@ -1,11 +1,14 @@
 "use client";
 
-import { useState, useRef, FormEvent } from "react";
+import { useState, useRef, type FormEvent, type ChangeEvent } from "react";
 
 interface ContactInputBarProps {
   recipientEmail?: string;
   onSend?: (message: string) => void;
 }
+
+const GMAIL_WINDOW_WIDTH = 640;
+const GMAIL_WINDOW_HEIGHT = 680;
 
 export default function ContactInputBar({
   recipientEmail = "vucongchien204@gmail.com",
@@ -14,8 +17,10 @@ export default function ContactInputBar({
   const [message, setMessage] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleSendEmail = (e?: FormEvent) => {
-    if (e) e.preventDefault();
+  const handleSendEmail = (event?: FormEvent) => {
+    if (event) {
+      event.preventDefault();
+    }
 
     if (onSend) {
       onSend(message);
@@ -31,19 +36,25 @@ Sent via vucongchien portfolio`;
 
     const encodedSubject = encodeURIComponent(subject);
     const encodedBody = encodeURIComponent(body);
-
     const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${recipientEmail}&su=${encodedSubject}&body=${encodedBody}`;
 
-    const width = 640;
-    const height = 680;
-    const left = Math.max(0, window.screenX + (window.outerWidth - width) / 2);
-    const top = Math.max(0, window.screenY + (window.outerHeight - height) / 2);
+    const left = Math.max(0, window.screenX + (window.outerWidth - GMAIL_WINDOW_WIDTH) / 2);
+    const top = Math.max(0, window.screenY + (window.outerHeight - GMAIL_WINDOW_HEIGHT) / 2);
 
     window.open(
       gmailUrl,
       "GmailCompose",
-      `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
+      `width=${GMAIL_WINDOW_WIDTH},height=${GMAIL_WINDOW_HEIGHT},top=${top},left=${left},resizable=yes,scrollbars=yes`
     );
+  };
+
+  const handleClear = () => {
+    setMessage("");
+    inputRef.current?.focus();
+  };
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setMessage(event.target.value);
   };
 
   return (
@@ -63,7 +74,7 @@ Sent via vucongchien portfolio`;
         ref={inputRef}
         type="text"
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={handleChange}
         placeholder="Say hello..."
         className="
           flex-1 bg-transparent text-slate-800 text-sm sm:text-base
@@ -76,10 +87,7 @@ Sent via vucongchien portfolio`;
       {message && (
         <button
           type="button"
-          onClick={() => {
-            setMessage("");
-            inputRef.current?.focus();
-          }}
+          onClick={handleClear}
           className="p-1.5 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 transition-colors"
           title="Clear message"
           aria-label="Clear message"
