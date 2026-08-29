@@ -8,45 +8,104 @@
    ═══════════════════════════════════════════ */
 
 :root {
-  --background: #F8FAFC;       /* slate-50 */
-  --foreground: #0F172A;       /* slate-900 */
+  /* ════ Surfaces (60%) ════ */
+  --background: #F8FAFC;            /* slate-50 */
+  --foreground: #0F172A;            /* slate-900 */
+  --surface-base: #F8FAFC;          /* slate-50 */
+  --surface-paper: #FFFFFF;         /* white */
+  --surface-band: rgba(238, 242, 255, 0.6); /* indigo-50/60 */
+  --surface-subtle: #F1F5F9;        /* slate-100 */
 
-  --primary: #4F46E5;          /* indigo-600 */
+  /* ════ Content & Typography (30%) ════ */
+  --content-primary: #0F172A;       /* slate-900 */
+  --content-secondary: #1E293B;     /* slate-800 */
+  --content-body: #475569;          /* slate-600 */
+  --content-subtle: #64748B;        /* slate-500 */
+  --content-muted: #94A3B8;         /* slate-400 */
+
+  /* ════ Borders & Structure ════ */
+  --border: #E2E8F0;                /* slate-200 */
+  --border-subtle: #E2E8F0;         /* slate-200 */
+  --border-light: #EEF2FF;          /* indigo-50 */
+  --border-accent: #C7D2FE;         /* indigo-200 */
+  --border-focus: #4F46E5;          /* indigo-600 */
+
+  /* ════ Accents & 3D Blocks (10%) ════ */
+  --primary: #4F46E5;               /* indigo-600 */
   --primary-foreground: #FFFFFF;
-  --primary-light: #EEF2FF;    /* indigo-50 */
-
-  --secondary: #F1F5F9;        /* slate-100 */
-  --secondary-foreground: #334155; /* slate-700 */
-
-  --accent: #F59E0B;           /* amber-500 */
+  --primary-light: #EEF2FF;         /* indigo-50 */
+  --primary-hover: #4338CA;         /* indigo-700 */
+  --accent: #F59E0B;                /* amber-500 */
   --accent-foreground: #FFFFFF;
+  --accent-gradient-to: #8B5CF6;    /* violet-500 */
 
-  --muted: #94A3B8;            /* slate-400 */
-  --border: #E2E8F0;           /* slate-200 */
+  --secondary: #F1F5F9;             /* slate-100 */
+  --secondary-foreground: #334155;  /* slate-700 */
+  --muted: #94A3B8;                 /* slate-400 */
 
-  --block-shadow: #C7D2FE;     /* indigo-200 — 3D block */
-  --block-shadow-dark: #A5B4FC; /* indigo-300 — 3D hover */
+  /* ════ 3D Solid Shadows ════ */
+  --block-shadow: #C7D2FE;          /* indigo-200 */
+  --block-shadow-dark: #A5B4FC;     /* indigo-300 */
+  --shadow-3d-block: 4px 4px 0px 0px #E2E8F0;
+  --shadow-3d-indigo: 4px 4px 0px 0px #C7D2FE;
+  --shadow-3d-hover: 2px 2px 0px 0px #A5B4FC;
+
+  /* ════ Feedback States ════ */
+  --success: #10B981;
+  --success-bg: #ECFDF5;
+  --error: #F43F5E;
+  --error-bg: #FFF1F2;
+  --warning: #F59E0B;
+  --warning-bg: #FFFBEB;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  --color-surface-base: var(--surface-base);
+  --color-surface-paper: var(--surface-paper);
+  --color-surface-band: var(--surface-band);
+  --color-surface-subtle: var(--surface-subtle);
+
+  --color-content-primary: var(--content-primary);
+  --color-content-secondary: var(--content-secondary);
+  --color-content-body: var(--content-body);
+  --color-content-subtle: var(--content-subtle);
+  --color-content-muted: var(--content-muted);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-light: var(--primary-light);
+  --color-primary-hover: var(--primary-hover);
 
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
 
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-gradient-to: var(--accent-gradient-to);
 
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-light: var(--border-light);
+  --color-border-accent: var(--border-accent);
+  --color-border-focus: var(--border-focus);
 
   --color-block-shadow: var(--block-shadow);
   --color-block-shadow-dark: var(--block-shadow-dark);
+
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-error: var(--error);
+  --color-error-bg: var(--error-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+
+  --shadow-3d-block: var(--shadow-3d-block);
+  --shadow-3d-indigo: var(--shadow-3d-indigo);
+  --shadow-3d-hover: var(--shadow-3d-hover);
 }
 
 @media (prefers-color-scheme: dark) {
