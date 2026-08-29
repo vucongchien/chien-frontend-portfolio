@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Diamond from "@/components/ui/Diamond";
 
-type ProjectCardProps = {
+interface ProjectCardProps {
   title: string;
   image: string;
   tech: string[];
-};
+}
 
 export default function ProjectCard({
   title,
@@ -13,15 +14,6 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className="group relative w-fit max-w-[260px]">
-      {/* 3D Block — solid color block behind card */}
-      {/* <div
-        className="
-          absolute inset-0 rounded-xl bg-block-shadow
-          translate-y-0.5
-          transition-transform duration-300 ease-out
-        "
-      /> */}
-
       {/* Card chính */}
       <div
         className="
@@ -32,7 +24,9 @@ export default function ProjectCard({
         "
       >
         {/* Diamond accent — top right corner */}
-        <div className="absolute top-3 right-3 z-20 w-2 h-2 bg-indigo-600 rotate-45 opacity-60" />
+        <div className="absolute top-3 right-3 z-20 opacity-60">
+          <Diamond size="sm" color="indigo" />
+        </div>
 
         {/* Image */}
         <div className="relative aspect-video w-full overflow-hidden bg-slate-100">

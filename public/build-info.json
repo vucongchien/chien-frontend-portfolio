@@ -1,14 +1,26 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-28T10:11:16.831Z",
+  "buildTime": "2026-08-28T13:11:44.893Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "1f14bf5",
-    "message": "feat(changelog): hoàn thiện trang changelog tối giản và cập nhật design rules",
+    "hash": "6345dbe",
+    "message": "fix(ci): remove unused Link import in Footer to pass oxlint CI",
     "author": "Vucongchien",
-    "date": "2026-08-28 16:54:03 +0700"
+    "date": "2026-08-28 17:54:24 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "6345dbe",
+      "message": "fix(ci): remove unused Link import in Footer to pass oxlint CI",
+      "author": "Vucongchien",
+      "date": "2026-08-28 17:54:24 +0700"
+    },
+    {
+      "hash": "ad1a210",
+      "message": "feat(contact): optimize contact chat input with Gmail compose popup and fix hydration error",
+      "author": "Vucongchien",
+      "date": "2026-08-28 17:32:53 +0700"
+    },
     {
       "hash": "1f14bf5",
       "message": "feat(changelog): hoàn thiện trang changelog tối giản và cập nhật design rules",
@@ -56,18 +68,6 @@
       "message": "feat: sửa frontend thành software",
       "author": "Vucongchien",
       "date": "2026-04-13 22:10:23 +0700"
-    },
-    {
-      "hash": "fd7d498",
-      "message": "Update email address in Contact component",
-      "author": "chiến",
-      "date": "2026-03-15 22:24:59 +0700"
-    },
-    {
-      "hash": "9f28204",
-      "message": "Initial commit",
-      "author": "vucongchien",
-      "date": "2026-03-14 08:39:22 +0000"
     }
   ]
 }
