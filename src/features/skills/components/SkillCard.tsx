@@ -9,7 +9,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
 
   return (
     <div
-      className="group relative w-[70px] sm:w-[90px]"
+      className="group relative w-16 sm:w-20"
       aria-label={`Kỹ năng ${skill.name}, mức độ ${skill.level} trên 5`}
     >
       {/* 3D Block — lighter for small cards */}
@@ -44,7 +44,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
         </span>
 
         {/* Name */}
-        <span className="relative text-[10px] sm:text-xs font-semibold text-slate-700 text-center leading-tight">
+        <span className="relative text-xs font-semibold text-slate-700 text-center leading-tight">
           {skill.name}
         </span>
 
