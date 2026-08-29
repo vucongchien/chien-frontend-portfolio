@@ -81,7 +81,7 @@ export default function Button({
   const { type = "button", onClick } = props as ButtonAsNormalProps;
   return (
     <button
-      type={type}
+      type={type || "button"}
       onClick={onClick}
       disabled={disabled}
       className={commonClasses}

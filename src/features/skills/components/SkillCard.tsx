@@ -5,7 +5,7 @@ interface SkillCardProps {
 }
 
 export default function SkillCard({ skill }: SkillCardProps) {
-  const levelDots = Array.from({ length: 5 }, (_, i) => i < skill.level);
+  const dots = [1, 2, 3, 4, 5];
 
   return (
     <div
@@ -50,19 +50,22 @@ export default function SkillCard({ skill }: SkillCardProps) {
 
         {/* Level dots */}
         <div className="relative flex gap-0.5 sm:gap-1">
-          {levelDots.map((filled, i) => (
-            <span
-              key={i}
-              className={`
-                block h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full transition-colors duration-300
-                ${
-                  filled
-                    ? "bg-slate-700 group-hover:bg-indigo-500"
-                    : "bg-slate-200"
-                }
-              `}
-            />
-          ))}
+          {dots.map((dotNumber) => {
+            const filled = dotNumber <= skill.level;
+            return (
+              <span
+                key={`${skill.name}-level-${dotNumber}`}
+                className={`
+                  block h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full transition-colors duration-300
+                  ${
+                    filled
+                      ? "bg-slate-700 group-hover:bg-indigo-500"
+                      : "bg-slate-200"
+                  }
+                `}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
