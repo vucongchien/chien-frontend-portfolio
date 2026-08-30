@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Diamond from "@/components/ui/Diamond";
 import Badge from "@/components/ui/Badge";
 
 interface ProjectCardProps {
@@ -24,10 +23,8 @@ export default function ProjectCard({
           group-hover:border-indigo-300
         "
       >
-        {/* Diamond accent — top right corner */}
-        <div className="absolute top-3 right-3 z-20 opacity-60">
-          <Diamond size="sm" color="indigo" />
-        </div>
+        {/* Diamond accent — đúng 1 thẻ duy nhất chuẩn bản gốc commit init, nằm chính xác góc chéo 45 độ */}
+        <div className="absolute top-3 right-3 z-20 w-2 h-2 bg-indigo-600 rotate-45 opacity-60 pointer-events-none" />
 
         {/* Image */}
         <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
