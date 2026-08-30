@@ -32,6 +32,7 @@ src/
 ├── app/                              # [Next.js Routing Layer] Pages, Layout & API Routes
 │   ├── api/                          # REST Endpoints (Streaming AI, Webhooks, Public API)
 │   ├── changelog/                    # Trang Changelog độc lập (/changelog)
+│   ├── notes/                        # Trang Notes (/notes) và chi tiết (/notes/[slug])
 │   ├── globals.css                   # Tailwind v4 Theme Tokens & Animation Keyframes
 │   ├── layout.tsx                    # Root Layout (Lora Font & Global Meta)
 │   └── page.tsx                      # Main Page (ScrollIndicator -> Hero -> About -> Contact -> Footer)
@@ -49,7 +50,8 @@ src/
 │   ├── projects/                     # ProjectsSection.tsx, ProjectCard.tsx, ProjectRow.tsx
 │   ├── skills/                       # SkillsSection.tsx, SkillCard.tsx
 │   ├── contact/                      # ContactSection.tsx, ContactInputBar.tsx
-│   └── changelog/                    # ChangelogTimeline.tsx
+│   ├── changelog/                    # ChangelogTimeline.tsx
+│   └── notes/                        # NoteFeed.tsx, NoteCard.tsx, NoteHeader.tsx, NoteContent.tsx, NoteBottomAction.tsx
 │
 ├── server/                           # 🛡️ [Backend & BFF Layer - Feature-Based Modules]
 │   ├── shared/                       # Cấu hình dùng chung (email.ts, env.ts)
@@ -57,60 +59,15 @@ src/
 │       ├── projects/                 # projects.service.ts, projects.data.ts
 │       ├── skills/                   # skills.service.ts, skills.data.ts
 │       ├── changelog/                # changelog.service.ts, changelog.data.ts
-│       └── contact/                  # contact.service.ts, contact.action.ts, contact.schema.ts
+│       ├── contact/                  # contact.service.ts, contact.action.ts, contact.schema.ts
+│       └── notes/                    # notes.service.ts, notes.data.ts
 │
-├── lib/                              # [Pure Utilities] Tiện ích dùng chung (clsx + twMerge, version helper)
+├── lib/                              # [Pure Utilities] Tiện ích dùng chung (clsx + twMerge, version helper, formatDate)
 │   ├── utils.ts
 │   └── version.ts
 │
 └── types/                            # [Global Types] Định nghĩa TypeScript toàn cục
     └── index.ts
-```
-
----
-
-## 🛠️ Hướng Dẫn Cài Đặt & Chạy Dự Án
-
-### Yêu cầu môi trường
-- **Node.js:** >= 20.x
-- **Package Manager:** `pnpm` (khuyên dùng để đồng bộ workspace)
-
-### 1. Cài đặt Dependencies
-```bash
-pnpm install
-```
-
-### 2. Chạy môi trường Phát triển (Development)
-```bash
-pnpm dev
-```
-Truy cập ứng dụng tại địa chỉ: `http://localhost:3000`.
-
-### 3. Kiểm tra Mã Nguồn & Type Check
-```bash
-# Kiểm tra TypeScript type safety
-pnpm typecheck
-
-# Fast-lint siêu tốc với Oxlint
-pnpm lint:fast
-
-# Chạy Linter chuẩn của Next.js/ESLint
-pnpm lint
-```
-
-### 4. Chạy Kiểm Thử End-to-End (Playwright)
-```bash
-# Chạy toàn bộ bài test E2E (headless)
-pnpm test:e2e
-
-# Chạy test với giao diện tương tác UI
-pnpm test:e2e:ui
-```
-
-### 5. Build Production
-```bash
-pnpm build
-pnpm start
 ```
 
 ---
@@ -132,4 +89,3 @@ pnpm start
 ## 📄 License & Bản Quyền
 
 © 2026 **Vũ Công Chiến**. Toàn bộ mã nguồn và thiết kế được phát triển cho mục đích xây dựng portfolio cá nhân.
-
