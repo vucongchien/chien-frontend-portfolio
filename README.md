@@ -34,6 +34,7 @@ Trang web Portfolio cá nhân của **Vũ Công Chiến (Software Engineer)**, �
 
 ## Reference
 
+- **Homepage Snapshot:** [docs/screenshots/homepage-full.png](docs/screenshots/homepage-full.png)
 - **Notes Page UI:** Giao diện trang Notes và trang đọc chi tiết được lấy cảm hứng trực tiếp từ phong cách tối giản của [Tom Weightman](https://www.tomweightman.com/).
 
 ---
