@@ -3,16 +3,16 @@ import {
   calculateReadingTime,
   extractHeadings,
   parseMarkdownToHtml,
-  getAllPosts,
-  getFeaturedPost,
-  getPostBySlug,
+  getAllNotes,
+  getFeaturedNote,
+  getNoteBySlug,
   getAllTags,
-  getPostsByTag,
-  searchPosts,
-  getAdjacentPosts,
-} from "./blog.service";
+  getNotesByTag,
+  searchNotes,
+  getAdjacentNotes,
+} from "./notes.service";
 
-describe("Blog Service — Business Logic Unit Tests", () => {
+describe("Notes Service — Business Logic Unit Tests", () => {
   describe("calculateReadingTime", () => {
     it("should return 1 minute for short or empty text", () => {
       expect(calculateReadingTime("")).toBe(1);
@@ -69,49 +69,49 @@ More text...
     });
   });
 
-  describe("getAllPosts", () => {
-    it("should return all posts sorted by publishedAt descending", () => {
-      const posts = getAllPosts();
-      expect(posts.length).toBeGreaterThan(0);
+  describe("getAllNotes", () => {
+    it("should return all notes sorted by publishedAt descending", () => {
+      const notes = getAllNotes();
+      expect(notes.length).toBeGreaterThan(0);
 
-      for (let i = 0; i < posts.length - 1; i++) {
-        const dateA = new Date(posts[i].publishedAt).getTime();
-        const dateB = new Date(posts[i + 1].publishedAt).getTime();
+      for (let i = 0; i < notes.length - 1; i++) {
+        const dateA = new Date(notes[i].publishedAt).getTime();
+        const dateB = new Date(notes[i + 1].publishedAt).getTime();
         expect(dateA).toBeGreaterThanOrEqual(dateB);
       }
     });
 
-    it("should include computed readingTime on each post", () => {
-      const posts = getAllPosts();
-      posts.forEach((post) => {
-        expect(post.readingTime).toBeDefined();
-        expect(post.readingTime).toBeGreaterThanOrEqual(1);
+    it("should include computed readingTime on each note", () => {
+      const notes = getAllNotes();
+      notes.forEach((item) => {
+        expect(item.readingTime).toBeDefined();
+        expect(item.readingTime).toBeGreaterThanOrEqual(1);
       });
     });
   });
 
-  describe("getFeaturedPost", () => {
-    it("should return the featured post if available", () => {
-      const featured = getFeaturedPost();
+  describe("getFeaturedNote", () => {
+    it("should return the featured note if available", () => {
+      const featured = getFeaturedNote();
       expect(featured).toBeDefined();
       expect(featured?.slug).toBe("system-thinking-in-frontend-architecture");
     });
   });
 
-  describe("getPostBySlug", () => {
-    it("should return post with htmlContent and toc for valid slug", () => {
-      const post = getPostBySlug("system-thinking-in-frontend-architecture");
-      expect(post).toBeDefined();
-      expect(post?.title).toBe(
+  describe("getNoteBySlug", () => {
+    it("should return note with htmlContent and toc for valid slug", () => {
+      const note = getNoteBySlug("system-thinking-in-frontend-architecture");
+      expect(note).toBeDefined();
+      expect(note?.title).toBe(
         "Tư Duy Hệ Thống Trong Kiến Trúc Frontend Hiện Đại"
       );
-      expect(post?.htmlContent).toContain("<h2");
-      expect(post?.toc.length).toBeGreaterThan(0);
+      expect(note?.htmlContent).toContain("<h2");
+      expect(note?.toc.length).toBeGreaterThan(0);
     });
 
     it("should return undefined for invalid slug", () => {
-      const post = getPostBySlug("non-existent-slug-xyz");
-      expect(post).toBeUndefined();
+      const note = getNoteBySlug("non-existent-slug-xyz");
+      expect(note).toBeUndefined();
     });
   });
 
@@ -125,54 +125,53 @@ More text...
     });
   });
 
-  describe("getPostsByTag", () => {
-    it("should filter posts by specific tag case-insensitively", () => {
-      const architecturePosts = getPostsByTag("architecture");
-      expect(architecturePosts.length).toBeGreaterThan(0);
-      architecturePosts.forEach((post) => {
+  describe("getNotesByTag", () => {
+    it("should filter notes by specific tag case-insensitively", () => {
+      const architectureNotes = getNotesByTag("architecture");
+      expect(architectureNotes.length).toBeGreaterThan(0);
+      architectureNotes.forEach((item) => {
         expect(
-          post.tags.some((t) => t.toLowerCase() === "architecture")
+          item.tags.some((t) => t.toLowerCase() === "architecture")
         ).toBe(true);
       });
     });
 
-    it("should return all posts when tag is 'all' or empty", () => {
-      expect(getPostsByTag("all").length).toBe(getAllPosts().length);
-      expect(getPostsByTag("").length).toBe(getAllPosts().length);
+    it("should return all notes when tag is 'all' or empty", () => {
+      expect(getNotesByTag("all").length).toBe(getAllNotes().length);
+      expect(getNotesByTag("").length).toBe(getAllNotes().length);
     });
   });
 
-  describe("searchPosts", () => {
-    it("should search posts by matching title, excerpt or tags", () => {
-      // Search by keyword present in AI agent post title
-      const searchResult = searchPosts("Idempotency");
+  describe("searchNotes", () => {
+    it("should search notes by matching title, excerpt or tags", () => {
+      const searchResult = searchNotes("Idempotency");
       expect(searchResult.length).toBeGreaterThanOrEqual(1);
     });
 
-    it("should search posts by tag", () => {
-      const searchResult = searchPosts("Architecture");
+    it("should search notes by tag", () => {
+      const searchResult = searchNotes("Architecture");
       expect(searchResult.length).toBeGreaterThanOrEqual(1);
     });
 
-    it("should return all posts when query is empty", () => {
-      expect(searchPosts("").length).toBe(getAllPosts().length);
-      expect(searchPosts("   ").length).toBe(getAllPosts().length);
+    it("should return all notes when query is empty", () => {
+      expect(searchNotes("").length).toBe(getAllNotes().length);
+      expect(searchNotes("   ").length).toBe(getAllNotes().length);
     });
   });
 
-  describe("getAdjacentPosts", () => {
-    it("should return previous and next posts correctly", () => {
-      const all = getAllPosts();
+  describe("getAdjacentNotes", () => {
+    it("should return previous and next notes correctly", () => {
+      const all = getAllNotes();
       if (all.length >= 3) {
         const middleSlug = all[1].slug;
-        const { previous, next } = getAdjacentPosts(middleSlug);
+        const { previous, next } = getAdjacentNotes(middleSlug);
         expect(previous?.slug).toBe(all[0].slug);
         expect(next?.slug).toBe(all[2].slug);
       }
     });
 
     it("should return empty object for invalid slug", () => {
-      const result = getAdjacentPosts("invalid-slug");
+      const result = getAdjacentNotes("invalid-slug");
       expect(result.previous).toBeUndefined();
       expect(result.next).toBeUndefined();
     });
