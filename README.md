@@ -14,7 +14,6 @@ Trang web Portfolio cá nhân của **Vũ Công Chiến (Software Engineer)**, �
 - **⚡ Hiệu Năng & Tốc Độ:**
   - Next.js 16 với trình biên dịch Turbopack siêu tốc.
   - **Oxlint** kiểm tra cú pháp mã nguồn cực nhanh (< 20ms cho toàn bộ dự án).
-  - Tự động sinh metadata phiên bản build qua script `scripts/generate-changelog.mjs`.
 - **🛡️ Clean & Scalable Architecture:**
   - **Design Tokens Layer (W3C Standard):** Quản lý tập trung tại `src/config/tokens.ts`.
   - **Headless Data & Logic:** Tách biệt hoàn toàn dữ liệu tĩnh và State logic (`useTypewriter`, `useScrollProgress`) khỏi tầng hiển thị.

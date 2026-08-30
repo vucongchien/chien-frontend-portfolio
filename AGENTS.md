@@ -63,9 +63,8 @@ src/
 │       ├── chat/ (sau này)           # chat.action.ts, chat.service.ts
 │       └── notes/                    # notes.service.ts, notes.data.ts
 │
-├── lib/                              # [Pure Utilities] Helper dùng được ở cả Client & Server (cn, format-time)
-│   ├── utils.ts                      # clsx + twMerge
-│   └── version.ts                    # build-info helper
+├── lib/                              # [Pure Utilities] Helper dùng được ở cả Client & Server (cn, formatDate)
+│   └── utils.ts                      # clsx + twMerge, formatDate
 │
 └── types/                            # [Global Types]
     └── index.ts
