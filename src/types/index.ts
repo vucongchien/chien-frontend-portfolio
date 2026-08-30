@@ -37,19 +37,19 @@ export interface SocialLink {
   iconType: "gmail" | "github" | "facebook";
 }
 
-export interface BlogAuthor {
+export interface NoteAuthor {
   name: string;
   role: string;
   avatar?: string;
 }
 
-export interface BlogTocItem {
+export interface NoteTocItem {
   id: string;
   text: string;
   level: number;
 }
 
-export interface BlogPost {
+export interface NotePost {
   slug: string;
   title: string;
   excerpt: string;
@@ -59,6 +59,6 @@ export interface BlogPost {
   tags: string[];
   coverImage?: string;
   featured?: boolean;
-  author: BlogAuthor;
+  author: NoteAuthor;
 }
 
