@@ -7,12 +7,12 @@ test.describe("Portfolio E2E User Flow", () => {
     await expect(page.locator("text=Vũ Công Chiến").first()).toBeVisible();
 
     // 2. Kiểm tra các liên kết navigation ở footer
-    const contactNav = page.locator("footer a:has-text('Contact')");
-    await expect(contactNav).toBeVisible();
-    await contactNav.click();
+    const notesNav = page.locator("footer a:has-text('Notes')");
+    await expect(notesNav).toBeVisible();
+    await notesNav.click();
 
-    // 3. Kiểm tra section Contact xuất hiện
-    await expect(page.locator("#contact")).toBeVisible();
+    // 3. Kiểm tra chuyển hướng sang trang /notes
+    await expect(page).toHaveURL(/\/notes/u);
   });
 
   test("tương tác với Contact form, gõ tin nhắn và Clear", async ({ page }) => {
