@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 type DiamondSize = "xs" | "sm" | "md" | "lg";
-type DiamondColor = "indigo" | "amber" | "indigo-light";
+type DiamondColor = "indigo" | "amber" | "indigo-light" | "violet" | "emerald";
 
 interface DiamondProps {
   size?: DiamondSize;
@@ -20,6 +20,8 @@ const colorMap: Record<DiamondColor, string> = {
   indigo: "bg-indigo-600",
   "indigo-light": "bg-indigo-400",
   amber: "bg-amber-500",
+  violet: "bg-violet-600",
+  emerald: "bg-emerald-600",
 };
 
 export default function Diamond({

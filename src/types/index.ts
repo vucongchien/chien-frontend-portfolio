@@ -36,3 +36,29 @@ export interface SocialLink {
   href: string;
   iconType: "gmail" | "github" | "facebook";
 }
+
+export interface BlogAuthor {
+  name: string;
+  role: string;
+  avatar?: string;
+}
+
+export interface BlogTocItem {
+  id: string;
+  text: string;
+  level: number;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  publishedAt: string;
+  readingTime?: number;
+  tags: string[];
+  coverImage?: string;
+  featured?: boolean;
+  author: BlogAuthor;
+}
+

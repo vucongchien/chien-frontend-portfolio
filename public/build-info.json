@@ -1,25 +1,31 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-29T08:18:09.757Z",
+  "buildTime": "2026-08-30T09:22:14.267Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "564549d",
-    "message": "feat(linter): enable pedantic and style categories with clean refactoring",
-    "author": "Vucongchien",
-    "date": "2026-08-29 15:16:49 +0700"
+    "hash": "a861e42",
+    "message": "Merge pull request #10 from vucongchien/feat/pedantic-style-oxlint-refactor",
+    "author": "chiến",
+    "date": "2026-08-29 15:19:44 +0700"
   },
   "recentCommits": [
     {
-      "hash": "564549d",
+      "hash": "a861e42",
+      "message": "Merge pull request #10 from vucongchien/feat/pedantic-style-oxlint-refactor",
+      "author": "chiến",
+      "date": "2026-08-29 15:19:44 +0700"
+    },
+    {
+      "hash": "bf43187",
+      "message": "chore(build): update build timestamp",
+      "author": "Vucongchien",
+      "date": "2026-08-29 15:18:22 +0700"
+    },
+    {
+      "hash": "880067c",
       "message": "feat(linter): enable pedantic and style categories with clean refactoring",
       "author": "Vucongchien",
       "date": "2026-08-29 15:16:49 +0700"
-    },
-    {
-      "hash": "0f36b94",
-      "message": "Merge branch 'main' into development",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:57:28 +0700"
     },
     {
       "hash": "6565d77",
@@ -46,12 +52,6 @@
       "date": "2026-08-29 14:45:35 +0700"
     },
     {
-      "hash": "55c4570",
-      "message": "Merge branch 'main' into development",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:44:24 +0700"
-    },
-    {
       "hash": "d24e1a1",
       "message": "Merge pull request #8 from vucongchien/fix/ci-dependencies",
       "author": "chiến",
@@ -64,10 +64,10 @@
       "date": "2026-08-29 14:44:05 +0700"
     },
     {
-      "hash": "a46293a",
-      "message": "Merge branch 'main' into development",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:42:01 +0700"
+      "hash": "7f761f1",
+      "message": "Merge pull request #7 from vucongchien/chore/agent-testing-rules",
+      "author": "chiến",
+      "date": "2026-08-29 14:41:52 +0700"
     }
   ]
 }

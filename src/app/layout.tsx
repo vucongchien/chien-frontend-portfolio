@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import "./globals.css";
@@ -6,11 +7,12 @@ const lora = Lora({
   subsets: ["vietnamese", "latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-lora",
-  display: 'swap',
-})
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Trang web portfolio của tôi",
+  title: "Vũ Công Chiến · Software Engineer",
+  description: "Trang web Portfolio cá nhân của Vũ Công Chiến (Software Engineer)",
 };
 
 export default function RootLayout({
@@ -19,10 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${lora.variable}`}
-      >
+    <html lang="vi">
+      <body className={`${lora.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -118,7 +118,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-lora), serif;
+  font-family: var(--font-lora), Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 /* ═══ Animations ═══ */

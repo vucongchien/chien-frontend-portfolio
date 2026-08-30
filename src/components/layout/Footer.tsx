@@ -15,11 +15,11 @@ export default function Footer() {
           </div>
 
           {/* Center — nav links */}
-          <nav className="flex items-center gap-6 text-sm text-slate-500">
-            <a href="#about" className="hover:text-indigo-600 transition-colors">About</a>
-            <a href="#projects" className="hover:text-indigo-600 transition-colors">Projects</a>
-            <a href="#skills" className="hover:text-indigo-600 transition-colors">Skills</a>
-            <a href="#contact" className="hover:text-indigo-600 transition-colors">Contact</a>
+          <nav className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 text-sm text-slate-500">
+            <a href="/#about" className="hover:text-indigo-600 transition-colors">About</a>
+            <a href="/#projects" className="hover:text-indigo-600 transition-colors">Projects</a>
+            <a href="/#skills" className="hover:text-indigo-600 transition-colors">Skills</a>
+            <a href="/#contact" className="hover:text-indigo-600 transition-colors">Contact</a>
           </nav>
 
           {/* Right — copyright */}
