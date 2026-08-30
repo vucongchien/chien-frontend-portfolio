@@ -61,7 +61,7 @@ src/
 │       ├── skills/                   # skills.service.ts, skills.data.ts
 │       ├── changelog/                # changelog.service.ts, changelog.data.ts
 │       ├── chat/ (sau này)           # chat.action.ts, chat.service.ts
-│       └── blog/ (sau này)           # blog.service.ts
+│       └── notes/                    # notes.service.ts, notes.data.ts
 │
 ├── lib/                              # [Pure Utilities] Helper dùng được ở cả Client & Server (cn, format-time)
 │   ├── utils.ts                      # clsx + twMerge

@@ -19,7 +19,7 @@ Trang web Portfolio cá nhân của **Vũ Công Chiến (Software Engineer)**, �
   - **Design Tokens Layer (W3C Standard):** Quản lý tập trung tại `src/config/tokens.ts`.
   - **Headless Data & Logic:** Tách biệt hoàn toàn dữ liệu tĩnh và State logic (`useTypewriter`, `useScrollProgress`) khỏi tầng hiển thị.
   - **Feature-Driven Frontend:** Đóng gói giao diện độc lập (`hero`, `about`, `projects`, `skills`, `contact`, `changelog`).
-  - **Server & BFF Modules:** Đóng gói logic backend/BFF (`src/server/modules/`), sẵn sàng mở rộng cho **AI Chat Streaming** và **Blog** mà không làm thay đổi cấu trúc cũ.
+  - **Server & BFF Modules:** Đóng gói logic backend/BFF (`src/server/modules/`), sẵn sàng mở rộng cho **AI Chat Streaming** và **Notes** mà không làm thay đổi cấu trúc cũ.
 - **🧪 Kiểm Thử Tự Động (E2E Testing):**
   - Hệ thống kiểm thử End-to-End với **Playwright** đảm bảo các luồng tương tác thực tế của người dùng luôn hoạt động ổn định.
 
@@ -123,6 +123,13 @@ pnpm start
 
 ---
 
+## 🎨 Nguồn Cảm Hứng Thiết Kế (Design Reference)
+
+- **Notes Page UI:** Giao diện trang Notes và trang đọc chi tiết được lấy cảm hứng trực tiếp từ phong cách tối giản của [Tom Weightman](https://www.tomweightman.com/).
+
+---
+
 ## 📄 License & Bản Quyền
 
 © 2026 **Vũ Công Chiến**. Toàn bộ mã nguồn và thiết kế được phát triển cho mục đích xây dựng portfolio cá nhân.
+

@@ -1,14 +1,38 @@
 {
   "version": "0.1.0",
-  "buildTime": "2026-08-30T09:22:14.267Z",
+  "buildTime": "2026-08-30T13:44:35.512Z",
   "environment": "development",
   "latestCommit": {
-    "hash": "a861e42",
-    "message": "Merge pull request #10 from vucongchien/feat/pedantic-style-oxlint-refactor",
-    "author": "chiến",
-    "date": "2026-08-29 15:19:44 +0700"
+    "hash": "24cae83",
+    "message": "fix(projects): align diamond accent to exact 45-degree corner and restore bold highlights",
+    "author": "Vucongchien",
+    "date": "2026-08-30 16:45:48 +0700"
   },
   "recentCommits": [
+    {
+      "hash": "24cae83",
+      "message": "fix(projects): align diamond accent to exact 45-degree corner and restore bold highlights",
+      "author": "Vucongchien",
+      "date": "2026-08-30 16:45:48 +0700"
+    },
+    {
+      "hash": "d57372f",
+      "message": "feat(blog): implement minimalist blog feed, reading layout and interactive share dropdown",
+      "author": "Vucongchien",
+      "date": "2026-08-30 16:45:41 +0700"
+    },
+    {
+      "hash": "ac69b47",
+      "message": "feat(server): implement blog module domain layer and generic QuickNav primitive",
+      "author": "Vucongchien",
+      "date": "2026-08-30 16:45:34 +0700"
+    },
+    {
+      "hash": "02226b9",
+      "message": "refactor(core): unify Lora typography, design tokens and global layout",
+      "author": "Vucongchien",
+      "date": "2026-08-30 16:45:26 +0700"
+    },
     {
       "hash": "a861e42",
       "message": "Merge pull request #10 from vucongchien/feat/pedantic-style-oxlint-refactor",
@@ -44,30 +68,6 @@
       "message": "chore(lint): configure agent-lint with dynamic DTCG tokens and Vercel taste rules",
       "author": "Vucongchien",
       "date": "2026-08-29 14:46:27 +0700"
-    },
-    {
-      "hash": "ec32ebe",
-      "message": "chore: trigger production deployment",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:45:35 +0700"
-    },
-    {
-      "hash": "d24e1a1",
-      "message": "Merge pull request #8 from vucongchien/fix/ci-dependencies",
-      "author": "chiến",
-      "date": "2026-08-29 14:44:15 +0700"
-    },
-    {
-      "hash": "fe0f454",
-      "message": "fix(ci): remove local agent-lint dependency and fix frozen lockfile",
-      "author": "Vucongchien",
-      "date": "2026-08-29 14:44:05 +0700"
-    },
-    {
-      "hash": "7f761f1",
-      "message": "Merge pull request #7 from vucongchien/chore/agent-testing-rules",
-      "author": "chiến",
-      "date": "2026-08-29 14:41:52 +0700"
     }
   ]
 }
