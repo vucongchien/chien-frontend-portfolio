@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
-interface BlogShareDropdownProps {
+interface NoteShareDropdownProps {
   title: string;
   className?: string;
 }
@@ -15,15 +15,14 @@ function getShareUrl(): string {
   return "";
 }
 
-export default function BlogShareDropdown({
+export default function NoteShareDropdown({
   title,
   className,
-}: BlogShareDropdownProps) {
+}: NoteShareDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Đóng dropdown khi click outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -58,7 +57,7 @@ export default function BlogShareDropdown({
         setIsOpen(false);
       }, 1500);
     } catch {
-      // Fallback
+      // Clipboard write failed
     }
   };
 
@@ -87,50 +86,50 @@ export default function BlogShareDropdown({
 
   return (
     <div ref={menuRef} className={cn("relative inline-block text-left", className)}>
-      {/* Nút trigger Share */}
+      {/* Nút trigger Share — Tối giản theo ảnh 3 */}
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label="Chia sẻ bài viết"
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-700 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-50 transition-colors shadow-2xs cursor-pointer"
+        className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer"
       >
         <svg
-          className="w-3.5 h-3.5 text-slate-500"
+          className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 transition-colors"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          strokeWidth={2}
+          strokeWidth={1.75}
           aria-hidden="true"
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+            d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
           />
         </svg>
-        <span>Chia sẻ</span>
+        <span>Share</span>
       </button>
 
-      {/* Dropdown Menu */}
+      {/* Dropdown Menu — Clean Minimal */}
       {isOpen && (
         <div
           role="menu"
           aria-label={`Chia sẻ: ${title}`}
-          className="absolute right-0 mt-2 w-48 rounded-xl bg-white border border-slate-200/90 shadow-md py-1.5 z-30 animate-in fade-in zoom-in-95 duration-100"
+          className="absolute left-0 mt-2 w-44 rounded-lg bg-white border border-slate-200/90 shadow-sm py-1 z-30 animate-in fade-in zoom-in-95 duration-100"
         >
           {/* 1. Copy link */}
           <button
             type="button"
             role="menuitem"
             onClick={handleCopyLink}
-            className="w-full flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors cursor-pointer text-left"
+            className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors cursor-pointer text-left"
           >
-            <span className="text-sm" aria-hidden="true">
-              🔗
-            </span>
-            <span>{copied ? "Đã sao chép link!" : "Sao chép liên kết"}</span>
+            <svg className="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+            </svg>
+            <span>{copied ? "Đã sao chép!" : "Sao chép liên kết"}</span>
           </button>
 
           {/* 2. Share Zalo */}
@@ -138,11 +137,9 @@ export default function BlogShareDropdown({
             type="button"
             role="menuitem"
             onClick={handleShareZalo}
-            className="w-full flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors cursor-pointer text-left"
+            className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors cursor-pointer text-left"
           >
-            <span className="text-sm font-bold text-blue-600" aria-hidden="true">
-              Z
-            </span>
+            <span className="w-3.5 text-center text-xs font-bold text-blue-600 font-sans" aria-hidden="true">Z</span>
             <span>Chia sẻ qua Zalo</span>
           </button>
 
@@ -151,27 +148,25 @@ export default function BlogShareDropdown({
             type="button"
             role="menuitem"
             onClick={handleShareLinkedIn}
-            className="w-full flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors cursor-pointer text-left"
+            className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors cursor-pointer text-left"
           >
-            <span className="text-sm font-bold text-blue-700" aria-hidden="true">
-              in
-            </span>
+            <span className="w-3.5 text-center text-xs font-bold text-blue-700 font-sans" aria-hidden="true">in</span>
             <span>Chia sẻ qua LinkedIn</span>
           </button>
 
           <div className="my-1 border-t border-slate-100" />
 
-          {/* 4. Tải / In PDF */}
+          {/* 4. In / Tải PDF */}
           <button
             type="button"
             role="menuitem"
             onClick={handleDownloadPdf}
-            className="w-full flex items-center gap-2.5 px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors cursor-pointer text-left"
+            className="w-full flex items-center gap-2 px-3 py-2 text-xs text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors cursor-pointer text-left"
           >
-            <span className="text-sm" aria-hidden="true">
-              📄
-            </span>
-            <span>Tải / In PDF</span>
+            <svg className="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24-1.04-.37-2.126-.37-3.239A8.96 8.96 0 0112 1.631c3.239 0 6.136 1.705 7.747 4.29a8.965 8.965 0 011.623 5.097c0 1.113-.13 2.199-.37 3.24M12 14.25v7.5m-3-3l3 3 3-3" />
+            </svg>
+            <span>In / Lưu PDF</span>
           </button>
         </div>
       )}
