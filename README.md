@@ -18,57 +18,10 @@ Trang web Portfolio cá nhân của **Vũ Công Chiến (Software Engineer)**, �
 - **🛡️ Clean & Scalable Architecture:**
   - **Design Tokens Layer (W3C Standard):** Quản lý tập trung tại `src/config/tokens.ts`.
   - **Headless Data & Logic:** Tách biệt hoàn toàn dữ liệu tĩnh và State logic (`useTypewriter`, `useScrollProgress`) khỏi tầng hiển thị.
-  - **Feature-Driven Frontend:** Đóng gói giao diện độc lập (`hero`, `about`, `projects`, `skills`, `contact`, `changelog`).
+  - **Feature-Driven Frontend:** Đóng gói giao diện độc lập (`hero`, `about`, `projects`, `skills`, `contact`, `changelog`, `notes`).
   - **Server & BFF Modules:** Đóng gói logic backend/BFF (`src/server/modules/`), sẵn sàng mở rộng cho **AI Chat Streaming** và **Notes** mà không làm thay đổi cấu trúc cũ.
 - **🧪 Kiểm Thử Tự Động (E2E Testing):**
   - Hệ thống kiểm thử End-to-End với **Playwright** đảm bảo các luồng tương tác thực tế của người dùng luôn hoạt động ổn định.
-
----
-
-## 📁 Cấu Trúc Thư Mục Chuẩn Hóa
-
-```
-src/
-├── app/                              # [Next.js Routing Layer] Pages, Layout & API Routes
-│   ├── api/                          # REST Endpoints (Streaming AI, Webhooks, Public API)
-│   ├── changelog/                    # Trang Changelog độc lập (/changelog)
-│   ├── notes/                        # Trang Notes (/notes) và chi tiết (/notes/[slug])
-│   ├── globals.css                   # Tailwind v4 Theme Tokens & Animation Keyframes
-│   ├── layout.tsx                    # Root Layout (Lora Font & Global Meta)
-│   └── page.tsx                      # Main Page (ScrollIndicator -> Hero -> About -> Contact -> Footer)
-│
-├── config/                           # [Design Tokens Layer] W3C Standard Tokens
-│   └── tokens.ts                     # Colors 60-30-10, Radius, Typography, Shadows
-│
-├── components/                       # [Shared UI Primitives & Layout]
-│   ├── ui/                           # UI Atoms: Button, Badge, Diamond, SectionHeading, SectionDivider, ChatBubble, FadeInOnScroll
-│   └── layout/                       # Layout Molecules: Footer, ScrollIndicator
-│
-├── features/                         # 🎨 [Frontend Feature Modules]
-│   ├── hero/                         # HeroSection.tsx, useTypewriter.ts
-│   ├── about/                        # AboutSection.tsx (Conversational Bands)
-│   ├── projects/                     # ProjectsSection.tsx, ProjectCard.tsx, ProjectRow.tsx
-│   ├── skills/                       # SkillsSection.tsx, SkillCard.tsx
-│   ├── contact/                      # ContactSection.tsx, ContactInputBar.tsx
-│   ├── changelog/                    # ChangelogTimeline.tsx
-│   └── notes/                        # NoteFeed.tsx, NoteCard.tsx, NoteHeader.tsx, NoteContent.tsx, NoteBottomAction.tsx
-│
-├── server/                           # 🛡️ [Backend & BFF Layer - Feature-Based Modules]
-│   ├── shared/                       # Cấu hình dùng chung (email.ts, env.ts)
-│   └── modules/                      # Các module nghiệp vụ Server theo từng Feature
-│       ├── projects/                 # projects.service.ts, projects.data.ts
-│       ├── skills/                   # skills.service.ts, skills.data.ts
-│       ├── changelog/                # changelog.service.ts, changelog.data.ts
-│       ├── contact/                  # contact.service.ts, contact.action.ts, contact.schema.ts
-│       └── notes/                    # notes.service.ts, notes.data.ts
-│
-├── lib/                              # [Pure Utilities] Tiện ích dùng chung (clsx + twMerge, version helper, formatDate)
-│   ├── utils.ts
-│   └── version.ts
-│
-└── types/                            # [Global Types] Định nghĩa TypeScript toàn cục
-    └── index.ts
-```
 
 ---
 
@@ -80,7 +33,7 @@ src/
 
 ---
 
-## 🎨 Nguồn Cảm Hứng Thiết Kế (Design Reference)
+## Reference
 
 - **Notes Page UI:** Giao diện trang Notes và trang đọc chi tiết được lấy cảm hứng trực tiếp từ phong cách tối giản của [Tom Weightman](https://www.tomweightman.com/).
 
