@@ -19,10 +19,12 @@ const DEFAULT_EXPERIENCES: ExperienceItem[] = [
     role: "AI-Native Software Engineer Intern",
     company: "Got It",
     description: [
-      "Designed and optimized Claude Code operating workflows, including context management, task orchestration, and output validation strategies.",
-      "Applied these workflows in production software projects to accelerate development, automate engineering tasks, and improve delivery efficiency.",
+      "Integrated Claude Code into the SDLC to analyze feature specs, author documentation, and deliver assigned tasks—collaborating closely with Mentors, BO, and QC while enforcing strict code quality.",
+      "Evolved core backend workflows within a large, complex production architecture—adapting the voucher system and delivery operations to changing business requirements, state transitions, and asynchronous processing.",
+      "Improved enterprise web portal UI/UX across internal domains, resolving complex display issues and ensuring accurate information and real-time state rendering.",
+      "Prototyped a Zalo Mini App MVP in React with the intern team to demonstrate P2P voucher gifting flows.",
     ],
-    techStack: ["Claude Code", "AI Workflows", "Context Management", "Task Orchestration", "Agentic Engineering"],
+    techStack: ["Claude Code", "Voucher System", "Zalo Mini App", "Design System", "Design Document"],
   },
   {
     id: "exp-ads-agency",
@@ -30,8 +32,8 @@ const DEFAULT_EXPERIENCES: ExperienceItem[] = [
     role: "Frontend Developer Intern",
     company: "AdsAgency",
     description: [
-      "Built and customized e-commerce websites using WordPress and WooCommerce",
-      "Improved user experience by optimizing layout, responsiveness, and product pages",
+      "Built and customized e-commerce websites using WordPress and WooCommerce.",
+      "Improved user experience by optimizing layout, responsiveness, and product pages.",
     ],
     techStack: ["WordPress", "WooCommerce", "Frontend", "UI/UX Optimization", "Responsive Design"],
   },

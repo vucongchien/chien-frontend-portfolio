@@ -184,7 +184,7 @@ export function ProjectsSection2026({
                           <span className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
                           <span className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
                           <span className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
-                          <span className="font-serif text-2xs text-neutral-400 ml-1 truncate">
+                          <span className="font-serif text-nano text-neutral-400 ml-1 truncate">
                             {project.demoUrl ? project.demoUrl.replace("https://", "") : project.title}
                           </span>
                         </div>

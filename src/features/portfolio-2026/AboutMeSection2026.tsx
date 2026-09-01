@@ -9,8 +9,8 @@ interface AboutMeSection2026Props {
 }
 
 export function AboutMeSection2026({
-  bioParagraph1 = "I am Vu Cong Chien, a final-year Software Engineering student at Posts and Telecommunications Institute of Technology (PTIT).",
-  bioParagraph2 = "Passionate about modern software engineering and integrating AI Agents throughout the Software Development Life Cycle (SDLC). I focus on designing, building, and optimizing resilient web systems—crafting responsive frontends with React and Next.js, and architecting robust backends across Java, Python, Node.js, and Go. Adaptable, keen on reading engineering blogs and exploring emerging tech, and seeking a long-term engineering role with high agency and deep technical curiosity.",
+  bioParagraph1 = "I am Vu Cong Chien, a final-year Software Engineering student at PTIT with hands-on experience designing, building, and deploying production-ready software.",
+  bioParagraph2 = "Skilled in controlling and validating AI-generated outputs, analyzing edge cases, and ensuring production-grade reliability across the SDLC. Driven by a deep passion for scalable software architecture and agentic engineering, I thrive on exploring emerging technologies, tackling complex technical challenges, and continuously shipping high-impact software to production.",
 }: AboutMeSection2026Props) {
   const [isVisible, setIsVisible] = useState(false);
   const [internshipMonths, setInternshipMonths] = useState(0);
