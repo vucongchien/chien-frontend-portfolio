@@ -6,7 +6,9 @@ export type SectionDividerVariant =
   | "indigo"
   | "violet"
   | "emerald"
-  | "amber";
+  | "amber"
+  | "teal"
+  | "cyan";
 
 interface SectionDividerProps {
   label: string;
@@ -39,6 +41,16 @@ const variants = {
     line: "bg-amber-200",
     text: "text-amber-600",
     diamond: "amber" as const,
+  },
+  teal: {
+    line: "bg-[var(--palette-1)]/30",
+    text: "text-[var(--palette-1)]",
+    diamond: "teal" as const,
+  },
+  cyan: {
+    line: "bg-[var(--palette-2)]/40",
+    text: "text-[var(--palette-1)]",
+    diamond: "cyan" as const,
   },
 } as const;
 

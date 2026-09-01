@@ -1,41 +1,128 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Diamond from "@/components/ui/Diamond";
 import { cn } from "@/lib/utils";
 
-export default function Footer() {
+interface FooterProps {
+  email?: string;
+  githubUrl?: string;
+  linkedinUrl?: string;
+  zaloUrl?: string;
+}
+
+export default function Footer({
+  email = "vucongchien204@gmail.com",
+  githubUrl = "https://github.com/vucongchien",
+  linkedinUrl = "https://linkedin.com/in/vucongchien",
+  zaloUrl = "https://zalo.me/0987654321",
+}: FooterProps) {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname === "/portfolio-2026" || pathname === "/portfolio2026";
   const isNotes = pathname === "/notes" || pathname.startsWith("/notes/");
 
+  const contactLinks = [
+    {
+      id: "email",
+      label: "Email",
+      href: `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`,
+      icon: (
+        <svg
+          className="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect width="20" height="16" x="2" y="4" rx="2" />
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+        </svg>
+      ),
+    },
+    {
+      id: "github",
+      label: "GitHub",
+      href: githubUrl,
+      icon: (
+        <svg
+          className="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+          <path d="M9 18c-4.51 2-5-2-7-2" />
+        </svg>
+      ),
+    },
+    {
+      id: "linkedin",
+      label: "LinkedIn",
+      href: linkedinUrl,
+      icon: (
+        <svg
+          className="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+          <rect width="4" height="12" x="2" y="9" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
+      ),
+    },
+    {
+      id: "zalo",
+      label: "Zalo",
+      href: zaloUrl,
+      icon: (
+        <svg
+          className="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          {/* Left — name */}
-          <div className="flex items-center gap-2">
-            <Diamond size="sm" color="indigo" />
-            <span className="text-sm font-semibold text-slate-800 tracking-[0.01em]">
+    <footer className="w-full bg-white text-neutral-900 border-t border-neutral-200 mt-16 sm:mt-24 px-6 sm:px-10 md:px-16 py-6 select-text">
+      <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Cột trái: Tên + Link Home & Notes tách rộng thoáng đãng */}
+        <div className="flex flex-wrap items-center gap-8 sm:gap-12 md:gap-14 text-sm">
+          <div className="flex items-center gap-2.5">
+            <Diamond size="sm" color="teal" />
+            <span className="font-semibold text-neutral-900 tracking-tight">
               Vũ Công Chiến
             </span>
           </div>
 
-          {/* Right — Home & Notes navigation with active state */}
-          <nav
-            aria-label="Footer navigation"
-            className="flex items-center gap-6 text-sm tracking-[0.02em]"
-          >
+          <nav className="flex items-center gap-6 sm:gap-8 text-sm tracking-[0.02em]">
             <Link
               href="/"
               className={cn(
                 "transition-colors",
                 isHome
-                  ? "text-slate-900 font-semibold cursor-default"
-                  : "text-slate-400 hover:text-slate-800"
+                  ? "text-black font-semibold"
+                  : "text-neutral-500 hover:text-black"
               )}
-              aria-current={isHome ? "page" : undefined}
             >
               Home
             </Link>
@@ -44,14 +131,30 @@ export default function Footer() {
               className={cn(
                 "transition-colors",
                 isNotes
-                  ? "text-slate-900 font-semibold cursor-default"
-                  : "text-slate-400 hover:text-slate-800"
+                  ? "text-black font-semibold"
+                  : "text-neutral-500 hover:text-black"
               )}
-              aria-current={isNotes ? "page" : undefined}
             >
               Notes
             </Link>
           </nav>
+        </div>
+
+        {/* Cột phải: Các icon contact tương tác */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {contactLinks.map((item) => (
+            <a
+              key={item.id}
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              aria-label={item.label}
+              title={item.label}
+              className="p-2 text-neutral-500 hover:text-palette-1 hover:bg-neutral-100 rounded-full transition-all duration-200 hover:scale-110 active:scale-95"
+            >
+              {item.icon}
+            </a>
+          ))}
         </div>
       </div>
     </footer>
