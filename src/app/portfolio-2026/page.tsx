@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Minimalist Editorial Portfolio 2026 of Vu Cong Chien (Software Engineer)",
 };
 
-export default function Home() {
+export default function Portfolio2026Page() {
   return (
     <main className="w-full min-h-screen bg-white text-black relative">
       <MorphingBrandName2026 anchorId="hero-name-placeholder" name="VŨ CÔNG CHIẾN" />

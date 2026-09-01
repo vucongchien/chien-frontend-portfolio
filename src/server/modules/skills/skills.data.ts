@@ -48,9 +48,13 @@ export const skillCategories: SkillCategory[] = [
     title: "AI / LLM",
     emoji: "🧠",
     skills: [
-      { name: "Claude", icon: "🤖", level: 4 },
-      { name: "Vector Databases", icon: "📦", level: 2 },
-      { name: "RAG (basic)", icon: "🔎", level: 2 },
+      { name: "LangChain", icon: "🦜", level: 4 },
+      { name: "Google ADK", icon: "✨", level: 4 },
+      { name: "MCP", icon: "🔌", level: 4 },
+      { name: "CopilotKit", icon: "🤖", level: 4 },
+      { name: "Claude / LLMs", icon: "💡", level: 4 },
+      { name: "Vector Databases", icon: "📦", level: 3 },
+      { name: "RAG & Agents", icon: "🔎", level: 4 },
     ],
   },
 ];
