@@ -25,6 +25,19 @@ export default function NoteFeed({ allNotes }: NoteFeedProps) {
     );
   }, [allNotes, query]);
 
+  if (allNotes.length === 0) {
+    return (
+      <div className="py-16 text-center space-y-2">
+        <p className="text-base sm:text-lg font-serif font-bold text-slate-900">
+          Chưa có bài viết nào
+        </p>
+        <p className="text-xs sm:text-sm text-slate-400 font-light max-w-sm mx-auto leading-relaxed">
+          Các ghi chép về kiến trúc hệ thống, AI & phát triển phần mềm sẽ sớm được cập nhật tại đây.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-8 sm:space-y-10">
       {/* Search Input (Subtle, borderless bottom hairline) */}
@@ -58,10 +71,9 @@ export default function NoteFeed({ allNotes }: NoteFeedProps) {
         )}
       </div>
 
-      {/* Danh sách bài viết phẳng thuần typography */}
       {filteredNotes.length === 0 ? (
         <div className="py-10 text-center text-slate-400 text-sm tracking-[0.02em]">
-          Không tìm thấy bài viết nào phù hợp.
+          Không tìm thấy bài viết nào phù hợp với &ldquo;{query}&rdquo;.
         </div>
       ) : (
         <div className="space-y-7 sm:space-y-8">

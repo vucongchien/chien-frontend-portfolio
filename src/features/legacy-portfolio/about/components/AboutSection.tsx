@@ -1,5 +1,5 @@
-import ProjectsSection from "@/features/projects/components/ProjectsSection";
-import SkillsSection from "@/features/skills/components/SkillsSection";
+import ProjectsSection from "@/features/legacy-portfolio/projects/components/ProjectsSection";
+import SkillsSection from "@/features/legacy-portfolio/skills/components/SkillsSection";
 import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
 import SectionHeading from "@/components/ui/SectionHeading";
 import SectionDivider from "@/components/ui/SectionDivider";

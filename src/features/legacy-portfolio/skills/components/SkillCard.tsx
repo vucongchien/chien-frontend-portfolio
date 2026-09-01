@@ -44,7 +44,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
         </span>
 
         {/* Name */}
-        <span className="relative text-xs font-semibold text-slate-700 text-center leading-tight">
+        <span className="relative text-xs font-serif font-semibold text-slate-700 text-center leading-tight">
           {skill.name}
         </span>
 

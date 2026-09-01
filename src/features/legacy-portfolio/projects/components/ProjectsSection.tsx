@@ -4,33 +4,6 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 
 function renderProjectDescription(id: string, fallback: string) {
-  if (id === "ecommerce-ai-agent") {
-    return (
-      <>
-        Web bán hàng tích hợp{" "}
-        <b className="font-semibold text-slate-800">AI Agent</b> tư vấn sản
-        phẩm cho khách hàng, hỗ trợ trải nghiệm mua sắm thông minh.
-      </>
-    );
-  }
-  if (id === "interactive-novel") {
-    return (
-      <>
-        Website cho phép tạo câu chuyện được sinh ra bởi{" "}
-        <b className="font-semibold text-slate-800">AI</b>, người dùng có thể
-        dẫn dắt mạch truyện theo ý muốn.
-      </>
-    );
-  }
-  if (id === "my-dress-up-darling") {
-    return (
-      <>
-        Website giới thiệu bộ anime{" "}
-        <b className="font-semibold text-slate-800">My Dress Up Darling</b> với
-        giao diện đẹp mắt và trải nghiệm trực quan.
-      </>
-    );
-  }
   return fallback;
 }
 

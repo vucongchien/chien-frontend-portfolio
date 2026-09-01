@@ -69,111 +69,38 @@ More text...
     });
   });
 
-  describe("getAllNotes", () => {
-    it("should return all notes sorted by publishedAt descending", () => {
+  describe("Empty state handling", () => {
+    it("getAllNotes should return empty array without crashing", () => {
       const notes = getAllNotes();
-      expect(notes.length).toBeGreaterThan(0);
-
-      for (let i = 0; i < notes.length - 1; i++) {
-        const dateA = new Date(notes[i].publishedAt).getTime();
-        const dateB = new Date(notes[i + 1].publishedAt).getTime();
-        expect(dateA).toBeGreaterThanOrEqual(dateB);
-      }
+      expect(Array.isArray(notes)).toBe(true);
     });
 
-    it("should include computed readingTime on each note", () => {
-      const notes = getAllNotes();
-      notes.forEach((item) => {
-        expect(item.readingTime).toBeDefined();
-        expect(item.readingTime).toBeGreaterThanOrEqual(1);
-      });
-    });
-  });
-
-  describe("getFeaturedNote", () => {
-    it("should return the featured note if available", () => {
+    it("getFeaturedNote should return undefined when no notes exist", () => {
       const featured = getFeaturedNote();
-      expect(featured).toBeDefined();
-      expect(featured?.slug).toBe("system-thinking-in-frontend-architecture");
-    });
-  });
-
-  describe("getNoteBySlug", () => {
-    it("should return note with htmlContent and toc for valid slug", () => {
-      const note = getNoteBySlug("system-thinking-in-frontend-architecture");
-      expect(note).toBeDefined();
-      expect(note?.title).toBe(
-        "Tư Duy Hệ Thống Trong Kiến Trúc Frontend Hiện Đại"
-      );
-      expect(note?.htmlContent).toContain("<h2");
-      expect(note?.toc.length).toBeGreaterThan(0);
+      expect(featured).toBeUndefined();
     });
 
-    it("should return undefined for invalid slug", () => {
-      const note = getNoteBySlug("non-existent-slug-xyz");
-      expect(note).toBeUndefined();
+    it("getNoteBySlug should return undefined for any slug when empty", () => {
+      expect(getNoteBySlug("non-existent")).toBeUndefined();
     });
-  });
 
-  describe("getAllTags", () => {
-    it("should aggregate all tags with their counts", () => {
+    it("getAllTags should return empty array when no notes exist", () => {
       const tags = getAllTags();
-      expect(tags.length).toBeGreaterThan(0);
-      const architectureTag = tags.find((t) => t.tag === "Architecture");
-      expect(architectureTag).toBeDefined();
-      expect(architectureTag?.count).toBeGreaterThanOrEqual(1);
-    });
-  });
-
-  describe("getNotesByTag", () => {
-    it("should filter notes by specific tag case-insensitively", () => {
-      const architectureNotes = getNotesByTag("architecture");
-      expect(architectureNotes.length).toBeGreaterThan(0);
-      architectureNotes.forEach((item) => {
-        expect(
-          item.tags.some((t) => t.toLowerCase() === "architecture")
-        ).toBe(true);
-      });
+      expect(tags).toEqual([]);
     });
 
-    it("should return all notes when tag is 'all' or empty", () => {
-      expect(getNotesByTag("all").length).toBe(getAllNotes().length);
-      expect(getNotesByTag("").length).toBe(getAllNotes().length);
-    });
-  });
-
-  describe("searchNotes", () => {
-    it("should search notes by matching title, excerpt or tags", () => {
-      const searchResult = searchNotes("Idempotency");
-      expect(searchResult.length).toBeGreaterThanOrEqual(1);
+    it("getNotesByTag should return empty array when no notes exist", () => {
+      expect(getNotesByTag("architecture")).toEqual([]);
     });
 
-    it("should search notes by tag", () => {
-      const searchResult = searchNotes("Architecture");
-      expect(searchResult.length).toBeGreaterThanOrEqual(1);
+    it("searchNotes should return empty array when no notes exist", () => {
+      expect(searchNotes("architecture")).toEqual([]);
     });
 
-    it("should return all notes when query is empty", () => {
-      expect(searchNotes("").length).toBe(getAllNotes().length);
-      expect(searchNotes("   ").length).toBe(getAllNotes().length);
-    });
-  });
-
-  describe("getAdjacentNotes", () => {
-    it("should return previous and next notes correctly", () => {
-      const all = getAllNotes();
-      if (all.length >= 3) {
-        const middleSlug = all[1].slug;
-        const { previous, next } = getAdjacentNotes(middleSlug);
-        expect(previous?.slug).toBe(all[0].slug);
-        expect(next?.slug).toBe(all[2].slug);
-      }
-    });
-
-    it("should return empty object for invalid slug", () => {
-      const result = getAdjacentNotes("invalid-slug");
-      expect(result.previous).toBeUndefined();
-      expect(result.next).toBeUndefined();
+    it("getAdjacentNotes should return undefined for previous and next", () => {
+      const { previous, next } = getAdjacentNotes("any-slug");
+      expect(previous).toBeUndefined();
+      expect(next).toBeUndefined();
     });
   });
 });

@@ -10,11 +10,6 @@ const TITLES = [
 export default function HeroSection() {
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
-      {/* Decorative angular elements */}
-      <div className="absolute top-20 right-16 w-3 h-3 bg-indigo-600 rotate-45 opacity-20" />
-      <div className="absolute top-28 right-24 w-2 h-2 bg-indigo-400 rotate-45 opacity-30" />
-      <div className="absolute bottom-32 left-20 w-4 h-4 bg-indigo-600 rotate-45 opacity-15" />
-      <div className="absolute bottom-40 left-12 w-2 h-2 bg-amber-500 rotate-45 opacity-25" />
 
       {/* Main Content */}
       <div className="mx-auto max-w-3xl text-center px-6 py-16 md:py-24">
