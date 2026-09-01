@@ -14,33 +14,66 @@ export interface ProjectItem {
   techStack: string[];
   demoUrl?: string;
   githubUrl?: string;
+  githubBackendUrl?: string;
 }
 
 const DEFAULT_PROJECTS: ProjectItem[] = [
   {
-    id: "ecommerce-ai-agent",
+    id: "fitness-ai-website",
     index: "01",
+    title: "Fitness AI Website",
+    category: "Full-stack Developer (Backend + Frontend)",
+    period: "06/2026 — 08/2026 · Team of 3",
+    image: "/project3.png",
+    description: [
+      "Designed and implemented a modular monolith in Go for Coaching and Exercise service decomposition.",
+      "Built an agentic coaching system using the Gemini API for 4-week workout plan generation, with business-rule constraints, exercise management, and reference-backed guardrails.",
+      "Built a frontend with BFF architecture, strategic caching, optimized rendering strategies, and Web Workers for camera and AI processing.",
+    ],
+    techStack: ["Go", "Protobuf/gRPC", "DDD", "Kafka", "PostgreSQL", "Agentic AI", "Next.js", "Playwright", "Docker", "Vercel", "Railway"],
+    githubUrl: "https://github.com/vucongchien/fitai-web",
+    githubBackendUrl: "https://github.com/viethung213/gym-companion",
+  },
+  {
+    id: "rent-a-gf",
+    index: "02",
+    title: "Rent-a-GF Platform",
+    category: "Full-stack Developer (Microservices + Frontend)",
+    period: "10/2025 — 12/2025 · Team of 3",
+    image: "/project2.png",
+    description: [
+      "Authored BRD and PRD specifications for a microservices architecture, defining Protobuf contracts and service boundaries.",
+      "Built the Java-based Notification Service, leveraging Redis for state caching to deliver multi-channel alerts across Gmail, Web Push, and FCM.",
+      "Designed and built frontend UX flows with BFF architecture, strategic caching, and Progressive Web features, deploying the client on Vercel.",
+    ],
+    techStack: ["Java", "Spring Boot", "Microservices", "Protobuf/gRPC", "Redis", "Kafka", "FCM", "Helm", "Next.js", "Vercel"],
+    githubUrl: "https://github.com/vucongchien/rent-a-gf-fe",
+    githubBackendUrl: "https://github.com/tianshi04/rent-a-girlfriend",
+  },
+  {
+    id: "ecommerce-ai-agent",
+    index: "03",
     title: "E-commerce AI Agent",
     category: "Full-stack Developer",
     period: "08/2025 — 01/2026",
     image: "/project1.png",
     description: [
       "Modern culinary e-commerce platform built with Next.js, FastAPI & Supabase.",
-      "Integrated conversational AI Agents and automated workflow tooling with AgUI.",
+      "Integrated conversational AI Agents, MCP Server, and automated workflow tooling with AgUI.",
     ],
-    techStack: ["Next.js", "TypeScript", "FastAPI", "Supabase", "AgUI", "TailwindCSS"],
+    techStack: ["Next.js", "TypeScript", "FastAPI", "Supabase", "MCP Server", "AgUI", "TailwindCSS"],
     demoUrl: "https://copilot-chan-fe-v2.vercel.app/",
     githubUrl: "https://github.com/copilot-chan/copilot-chan-fe-v2",
   },
   {
     id: "interactive-novel",
-    index: "02",
+    index: "04",
     title: "Interactive Novel",
     category: "Full-stack Developer",
     period: "03/2025 — 05/2025",
     image: "/project2.png",
     description: [
-      "Interactive visual novel platform built with React.",
+      "Built the interactive visual novel frontend in React, delivering immersive visual storytelling flows.",
       "FastAPI backend integrated with Gemini API for dynamic storytelling generation.",
     ],
     techStack: ["React", "FastAPI", "Gemini API", "TailwindCSS", "Docker", "Fly.io"],
@@ -102,8 +135,8 @@ export function ProjectsSection2026({
             </h2>
           </div>
 
-          {/* Danh sách Dự án tiêu biểu (Bố cục 2 cột gọn gàng, tinh tế) */}
-          <div className="w-full space-y-8 sm:space-y-10">
+          {/* Danh sách Dự án tiêu biểu (Bố cục thoáng đãng, khoảng thở rộng rãi chuẩn Editorial) */}
+          <div className="w-full space-y-14 sm:space-y-16 md:space-y-20">
             {projects.map((project, index) => {
               const isVisible = visibleItems[project.id];
 
@@ -114,16 +147,16 @@ export function ProjectsSection2026({
                   style={{
                     transitionDelay: `${index * 90}ms`,
                   }}
-                  className={`w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start group transition-all duration-500 ease-out will-change-transform ${
+                  className={`w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-start group transition-all duration-500 ease-out will-change-transform border-b border-neutral-100/80 pb-12 sm:pb-14 md:pb-16 last:border-b-0 last:pb-0 ${
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-3"
                   }`}
                 >
                   {/* CỘT TRÁI (7 PHẦN): THÔNG TIN DỰ ÁN TINH GỌN (CANH TRÊN CÙNG) */}
-                  <div className="lg:col-span-7 flex flex-col space-y-3">
+                  <div className="lg:col-span-7 flex flex-col space-y-4 sm:space-y-5">
                     {/* Header: Số thứ tự + Tên */}
-                    <div className="flex flex-col space-y-1">
+                    <div className="flex flex-col space-y-1.5">
                       <div className="flex items-baseline gap-2.5">
                         <span className="font-serif text-xs text-neutral-400">
                           {project.index}.
@@ -140,16 +173,16 @@ export function ProjectsSection2026({
                     </div>
 
                     {/* Mô tả ngắn gọn súc tích dạng gạch đầu dòng */}
-                    <ul className="space-y-1 text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
+                    <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
                       {Array.isArray(project.description) ? (
                         project.description.map((desc) => (
-                          <li key={desc.slice(0, 30)} className="flex items-start gap-1.5">
+                          <li key={desc.slice(0, 30)} className="flex items-start gap-2">
                             <span className="text-neutral-400 select-none">-</span>
                             <span>{desc}</span>
                           </li>
                         ))
                       ) : (
-                        <li className="flex items-start gap-1.5">
+                        <li className="flex items-start gap-2">
                           <span className="text-neutral-400 select-none">-</span>
                           <span>{project.description}</span>
                         </li>
@@ -157,11 +190,11 @@ export function ProjectsSection2026({
                     </ul>
 
                     {/* Tech Stack Tags */}
-                    <div className="flex flex-wrap gap-1.5 pt-1">
+                    <div className="flex flex-wrap gap-2 pt-2 sm:pt-3">
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="font-serif text-xs text-neutral-600 bg-neutral-100/60 px-2 py-0.5 rounded-none"
+                          className="font-serif text-xs text-neutral-600 bg-neutral-100/70 px-2.5 py-0.5 rounded-none"
                         >
                           {tech}
                         </span>
@@ -171,7 +204,7 @@ export function ProjectsSection2026({
 
                   {/* CỘT PHẢI (5 PHẦN): KHUNG HÌNH ẢNH PREVIEW GIAO DIỆN + NÚT ACTION CANH PHẢI DƯỚI HÌNH */}
                   {project.image && (
-                    <div className="lg:col-span-5 w-full flex flex-col space-y-2">
+                    <div className="lg:col-span-5 w-full flex flex-col space-y-3">
                       <a
                         href={project.demoUrl || project.githubUrl || "#"}
                         target={project.demoUrl || project.githubUrl ? "_blank" : undefined}
@@ -202,7 +235,7 @@ export function ProjectsSection2026({
                       </a>
 
                       {/* Action Buttons: Đặt sát hình, canh trái và dưới, có hiệu ứng xoay laser beam */}
-                      <div className="flex items-center justify-start gap-2.5 pt-0.5 font-serif text-xs">
+                      <div className="flex items-center justify-start gap-2.5 pt-1 font-serif text-xs">
                         {project.demoUrl && (
                           <a
                             href={project.demoUrl}
@@ -228,12 +261,31 @@ export function ProjectsSection2026({
                             target="_blank"
                             rel="noopener noreferrer"
                             className="relative p-[1.5px] rounded overflow-hidden inline-flex items-center group/btn focus:outline-none"
-                            aria-label={`View source code for ${project.title}`}
+                            aria-label={`View frontend source code for ${project.title}`}
                           >
                             <span className="absolute inset-[-150%] opacity-0 group-hover:opacity-100 animate-border-beam-slow transition-opacity duration-300 pointer-events-none bg-laser-beam" />
                             <span className="absolute inset-0 rounded border border-neutral-200 pointer-events-none" />
                             <span className="relative px-2.5 py-1 bg-white text-neutral-700 group-hover/btn:text-black rounded-xs flex items-center gap-1 transition-colors z-10">
-                              Source
+                              {project.githubBackendUrl ? "FE Source" : "Source"}
+                              <span className="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">
+                                ↗
+                              </span>
+                            </span>
+                          </a>
+                        )}
+
+                        {project.githubBackendUrl && (
+                          <a
+                            href={project.githubBackendUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative p-[1.5px] rounded overflow-hidden inline-flex items-center group/btn focus:outline-none"
+                            aria-label={`View backend source code for ${project.title}`}
+                          >
+                            <span className="absolute inset-[-150%] opacity-0 group-hover:opacity-100 animate-border-beam-slow transition-opacity duration-300 pointer-events-none bg-laser-beam" />
+                            <span className="absolute inset-0 rounded border border-neutral-200 pointer-events-none" />
+                            <span className="relative px-2.5 py-1 bg-white text-neutral-700 group-hover/btn:text-black rounded-xs flex items-center gap-1 transition-colors z-10">
+                              BE Source
                               <span className="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">
                                 ↗
                               </span>

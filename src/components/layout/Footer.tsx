@@ -16,8 +16,8 @@ interface FooterProps {
 export default function Footer({
   email = "vucongchien204@gmail.com",
   githubUrl = "https://github.com/vucongchien",
-  linkedinUrl = "https://linkedin.com/in/vucongchien",
-  zaloUrl = "https://zalo.me/0987654321",
+  linkedinUrl = "https://www.linkedin.com/in/chi%E1%BA%BFn-v%C5%A9-6b6062373/",
+  zaloUrl = "https://zalo.me/0383451425",
 }: FooterProps) {
   const pathname = usePathname();
   const isHome = pathname === "/" || pathname === "/portfolio-2026" || pathname === "/portfolio2026";

@@ -29,6 +29,8 @@ test.describe("Portfolio E2E User Flow", () => {
     await expect(viewProjectsBtn).toBeVisible();
 
     // 3. Kiểm tra danh sách dự án hiển thị
+    await expect(page.locator("h3:has-text('Fitness AI Website')")).toBeVisible();
+    await expect(page.locator("h3:has-text('Rent-a-GF Platform')")).toBeVisible();
     await expect(page.locator("h3:has-text('E-commerce AI Agent')")).toBeVisible();
     await expect(page.locator("h3:has-text('Interactive Novel')")).toBeVisible();
 
