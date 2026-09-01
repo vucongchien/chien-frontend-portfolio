@@ -75,7 +75,7 @@ export function ExperienceSection2026({
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white text-black py-10 md:py-16 select-text"
+      className="w-full bg-[#FAFAFA] border-y border-neutral-200/50 text-black py-12 md:py-18 select-text"
     >
       {/* 
         GRID 6 KHÚC (6-COLUMN SYSTEM):
@@ -153,7 +153,7 @@ export function ExperienceSection2026({
                       {exp.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="font-serif text-xs text-neutral-600 bg-neutral-100/60 px-2 py-0.5 rounded-none"
+                          className="font-serif text-xs text-neutral-700 bg-white border border-neutral-200/80 px-2.5 py-0.5 rounded-none shadow-2xs"
                         >
                           {tech}
                         </span>
