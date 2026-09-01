@@ -11,8 +11,8 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Vũ Công Chiến · Software Engineer",
-  description: "Trang web Portfolio cá nhân của Vũ Công Chiến (Software Engineer)",
+  title: "Vu Cong Chien · Software Engineer",
+  description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
+    <html lang="en">
       <body className={`${lora.variable} antialiased`}>
         {children}
       </body>

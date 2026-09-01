@@ -25,7 +25,7 @@ test.describe("Portfolio E2E User Flow", () => {
     await expect(page.locator("h2:has-text('CERTIFICATIONS & ACTIVITIES')")).toBeVisible();
 
     // 2. Kiểm tra nút View Projects cuộn tới mục #projects
-    const viewProjectsBtn = page.locator("a[aria-label='Cuộn xuống xem danh sách dự án']");
+    const viewProjectsBtn = page.locator("a[aria-label='Scroll down to view projects']");
     await expect(viewProjectsBtn).toBeVisible();
 
     // 3. Kiểm tra danh sách dự án hiển thị

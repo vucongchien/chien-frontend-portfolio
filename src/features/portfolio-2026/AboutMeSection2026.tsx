@@ -9,8 +9,8 @@ interface AboutMeSection2026Props {
 }
 
 export function AboutMeSection2026({
-  bioParagraph1 = "Tôi là Vũ Công Chiến, một Software Engineer tập trung phát triển các sản phẩm web hiện đại với trải nghiệm mượt mà và kiến trúc giao diện sạch.",
-  bioParagraph2 = "Tôi đam mê nghiên cứu và ứng dụng AI Agents, phát triển Frontend với React, Next.js và Backend với Node.js, FastAPI, luôn ưu tiên tối ưu hiệu năng và thiết kế hệ thống bền vững. Hiện là sinh viên Kỹ thuật Phần mềm tại Học viện Công nghệ Bưu chính Viễn thông (PTIT).",
+  bioParagraph1 = "I am Vu Cong Chien, a final-year Software Engineering student at Posts and Telecommunications Institute of Technology (PTIT).",
+  bioParagraph2 = "Passionate about modern software engineering and integrating AI Agents throughout the Software Development Life Cycle (SDLC). I focus on designing, building, and optimizing resilient web systems—crafting responsive frontends with React and Next.js, and architecting robust backends across Java, Python, Node.js, and Go. Adaptable, keen on reading engineering blogs and exploring emerging tech, and seeking a long-term engineering role with high agency and deep technical curiosity.",
 }: AboutMeSection2026Props) {
   const [isVisible, setIsVisible] = useState(false);
   const [internshipMonths, setInternshipMonths] = useState(0);
@@ -107,7 +107,7 @@ export function AboutMeSection2026({
                 <span className="text-palette-4 text-base font-normal ml-0.5">+</span>
               </div>
               <span className="font-mono text-3xs sm:text-2xs text-neutral-500 mt-0.5 leading-tight">
-                Tháng thực tập
+                Months of Internship
               </span>
             </div>
 
@@ -118,7 +118,7 @@ export function AboutMeSection2026({
                 <span className="text-palette-1 text-base font-normal ml-0.5">+</span>
               </div>
               <span className="font-mono text-3xs sm:text-2xs text-neutral-500 mt-0.5 leading-tight">
-                Dự án đã build
+                Projects Built
               </span>
             </div>
           </div>

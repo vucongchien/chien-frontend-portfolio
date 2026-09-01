@@ -204,7 +204,7 @@ export function MorphingBrandName2026({
       type="button"
       ref={containerRef}
       onClick={isInteractive ? handleScrollToTop : undefined}
-      aria-label={`Logo thương hiệu - ${name} (Bấm để về đầu trang)`}
+      aria-label={`Brand logo - ${name} (Click to scroll to top)`}
       style={{
         opacity: 0,
         visibility: "hidden",

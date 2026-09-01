@@ -11,18 +11,17 @@ export default function NotesNotFound() {
             404 NOT FOUND
           </p>
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-[-0.01em]">
-            Ghi chép không tồn tại
+            Note Not Found
           </h1>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed tracking-[0.02em] max-w-md">
-            Bài viết bạn đang tìm kiếm có thể đã bị đổi tên, di chuyển hoặc chưa
-            được xuất bản.
+            The note you are looking for might have been renamed, moved, or has not been published yet.
           </p>
           <div className="pt-4">
             <Link
               href="/notes"
               className="inline-flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-800 transition-colors font-medium tracking-[0.02em]"
             >
-              <span>← Quay lại danh sách Notes</span>
+              <span>← Back to Notes</span>
             </Link>
           </div>
         </div>

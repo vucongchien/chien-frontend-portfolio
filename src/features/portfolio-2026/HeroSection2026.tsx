@@ -81,7 +81,7 @@ export function HeroSection2026({
                 animationDelay: "0ms",
               }}
               className="group relative inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-xs border border-neutral-200 bg-white text-neutral-900 font-mono text-xs overflow-hidden transition-all duration-300 hover:border-transparent hover:text-black focus:outline-none cursor-pointer animate-slide-in-right"
-              aria-label="Cuộn xuống xem danh sách dự án"
+              aria-label="Scroll down to view projects"
             >
               {/* LỚP 1: BỐC LỬA NĂNG LƯỢNG ANIME CYAN/MINT/TEAL (FLAME AURA) KHI HOVER */}
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 animate-flame-energy bg-flame-cyan" />
@@ -124,7 +124,7 @@ export function HeroSection2026({
                 animationDelay: "120ms",
               }}
               className="group relative inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-xs border border-neutral-200 bg-white text-neutral-900 font-mono text-xs overflow-hidden transition-all duration-300 hover:border-transparent hover:text-black focus:outline-none cursor-pointer animate-slide-in-right"
-              aria-label="Gửi email liên hệ"
+              aria-label="Send email"
             >
               {/* LỚP 1: BỐC LỬA NĂNG LƯỢNG ANIME (FLAME AURA) KHI HOVER */}
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 animate-flame-energy bg-flame-mint" />

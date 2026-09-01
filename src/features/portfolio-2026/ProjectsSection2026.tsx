@@ -25,8 +25,8 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     period: "08/2025 — 01/2026",
     image: "/project1.png",
     description: [
-      "E-commerce ẩm thực hiện đại với Next.js, FastAPI & Supabase.",
-      "Tích hợp AI Agent tương tác và công cụ luồng việc với AgUI.",
+      "Modern culinary e-commerce platform built with Next.js, FastAPI & Supabase.",
+      "Integrated conversational AI Agents and automated workflow tooling with AgUI.",
     ],
     techStack: ["Next.js", "TypeScript", "FastAPI", "Supabase", "AgUI", "TailwindCSS"],
     demoUrl: "https://copilot-chan-fe-v2.vercel.app/",
@@ -40,8 +40,8 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     period: "03/2025 — 05/2025",
     image: "/project2.png",
     description: [
-      "Nền tảng đọc truyện tương tác trực quan xây dựng với React.",
-      "Backend FastAPI tích hợp Gemini API sinh nội dung thông minh.",
+      "Interactive visual novel platform built with React.",
+      "FastAPI backend integrated with Gemini API for dynamic storytelling generation.",
     ],
     techStack: ["React", "FastAPI", "Gemini API", "TailwindCSS", "Docker", "Fly.io"],
     demoUrl: "https://visual-story.vercel.app/",
@@ -177,7 +177,7 @@ export function ProjectsSection2026({
                         target={project.demoUrl || project.githubUrl ? "_blank" : undefined}
                         rel="noopener noreferrer"
                         className="group/img block w-full relative rounded-md overflow-hidden border border-neutral-200 bg-white shadow-xs hover:shadow-sm hover:border-neutral-400 transition-all duration-300 focus:outline-none"
-                        aria-label={`Xem chi tiết ${project.title}`}
+                        aria-label={`View details for ${project.title}`}
                       >
                         {/* Top Browser Bar Minimalist */}
                         <div className="w-full h-5 bg-neutral-50 border-b border-neutral-200/70 px-2 flex items-center gap-1.5">
@@ -209,7 +209,7 @@ export function ProjectsSection2026({
                             target="_blank"
                             rel="noopener noreferrer"
                             className="relative p-[1.5px] rounded overflow-hidden inline-flex items-center group/btn focus:outline-none"
-                            aria-label={`Xem demo ${project.title}`}
+                            aria-label={`View live demo for ${project.title}`}
                           >
                             <span className="absolute inset-[-150%] opacity-0 group-hover:opacity-100 animate-border-beam-slow transition-opacity duration-300 pointer-events-none bg-laser-beam" />
                             <span className="absolute inset-0 rounded border border-neutral-200 pointer-events-none" />
@@ -228,7 +228,7 @@ export function ProjectsSection2026({
                             target="_blank"
                             rel="noopener noreferrer"
                             className="relative p-[1.5px] rounded overflow-hidden inline-flex items-center group/btn focus:outline-none"
-                            aria-label={`Xem mã nguồn ${project.title}`}
+                            aria-label={`View source code for ${project.title}`}
                           >
                             <span className="absolute inset-[-150%] opacity-0 group-hover:opacity-100 animate-border-beam-slow transition-opacity duration-300 pointer-events-none bg-laser-beam" />
                             <span className="absolute inset-0 rounded border border-neutral-200 pointer-events-none" />

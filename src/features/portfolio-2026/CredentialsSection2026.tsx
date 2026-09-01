@@ -119,7 +119,7 @@ export function CredentialsSection2026() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group/cert inline-flex items-baseline gap-1.5 focus:outline-none"
-                        aria-label={`Xác thực chứng chỉ ${cert.title}`}
+                        aria-label={`Verify credential for ${cert.title}`}
                       >
                         <span className="font-serif text-base sm:text-lg font-bold text-neutral-900 group-hover/cert:text-palette-1 transition-colors">
                           {cert.title}
@@ -146,14 +146,14 @@ export function CredentialsSection2026() {
             <div className="w-full flex flex-col space-y-0.5">
               <div className="flex items-baseline gap-2">
                 <h3 className="font-serif text-base sm:text-lg font-bold text-neutral-900 leading-snug">
-                  BCN CLB Cờ vua PTIT
+                  Executive Board Member · PTIT Chess Club
                 </h3>
                 <span className="font-mono text-xs text-neutral-400">
                   (2024 — 2025)
                 </span>
               </div>
               <p className="font-mono text-xs text-neutral-400">
-                Dẫn dắt, quản lý đội nhóm CLB, tham gia nhiều hoạt động liên quan
+                Led and organized team activities, managed club operations, and represented the institution in chess tournaments.
               </p>
             </div>
           </div>

@@ -29,10 +29,10 @@ export default function NoteFeed({ allNotes }: NoteFeedProps) {
     return (
       <div className="py-16 text-center space-y-2">
         <p className="text-base sm:text-lg font-serif font-bold text-slate-900">
-          Chưa có bài viết nào
+          No notes published yet
         </p>
         <p className="text-xs sm:text-sm text-slate-400 font-light max-w-sm mx-auto leading-relaxed">
-          Các ghi chép về kiến trúc hệ thống, AI & phát triển phần mềm sẽ sớm được cập nhật tại đây.
+          Engineering notes on system architecture, AI agents, and software development will be shared here soon.
         </p>
       </div>
     );
@@ -47,7 +47,7 @@ export default function NoteFeed({ allNotes }: NoteFeedProps) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search notes..."
-          aria-label="Tìm kiếm bài viết"
+          aria-label="Search notes"
           className="w-full text-sm text-slate-900 placeholder:text-slate-400 bg-transparent border-b border-slate-200/80 pb-2.5 focus:outline-none focus:border-slate-400 transition-colors tracking-[0.02em]"
         />
         {query && (
@@ -55,7 +55,7 @@ export default function NoteFeed({ allNotes }: NoteFeedProps) {
             type="button"
             onClick={() => setQuery("")}
             className="absolute right-0 top-1 text-slate-400 hover:text-slate-700 cursor-pointer p-1 transition-colors"
-            aria-label="Xóa tìm kiếm"
+            aria-label="Clear search"
           >
             <svg
               className="w-3.5 h-3.5"
@@ -73,13 +73,13 @@ export default function NoteFeed({ allNotes }: NoteFeedProps) {
 
       {filteredNotes.length === 0 ? (
         <div className="py-10 text-center text-slate-400 text-sm tracking-[0.02em]">
-          Không tìm thấy bài viết nào phù hợp với &ldquo;{query}&rdquo;.
+          No notes found matching &ldquo;{query}&rdquo;.
         </div>
       ) : (
         <div className="space-y-7 sm:space-y-8">
           {query.trim() && (
             <p className="text-xs text-slate-400 tracking-[0.035em]">
-              Tìm thấy {filteredNotes.length} bài viết cho &ldquo;{query}&rdquo;
+              Found {filteredNotes.length} note{filteredNotes.length > 1 ? "s" : ""} for &ldquo;{query}&rdquo;
             </p>
           )}
           {filteredNotes.map((note) => (

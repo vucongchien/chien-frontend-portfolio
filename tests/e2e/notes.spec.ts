@@ -9,7 +9,7 @@ test.describe("Notes Feature E2E User Flow", () => {
     ).toBeVisible();
 
     // 2. Kiểm tra trạng thái hiển thị (Empty State hoặc Feed danh sách)
-    const emptyState = page.locator("text=Chưa có bài viết nào");
+    const emptyState = page.locator("text=No notes published yet");
     const postLinks = page.locator("a[href^='/notes/']");
 
     if (await emptyState.isVisible()) {
@@ -25,6 +25,6 @@ test.describe("Notes Feature E2E User Flow", () => {
   }) => {
     const response = await page.goto("/notes/invalid-slug-12345");
     expect(response?.status()).toBe(404);
-    await expect(page.locator("text=Ghi chép không tồn tại")).toBeVisible();
+    await expect(page.locator("text=Note Not Found")).toBeVisible();
   });
 });
