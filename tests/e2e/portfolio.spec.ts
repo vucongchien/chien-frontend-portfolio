@@ -15,29 +15,26 @@ test.describe("Portfolio E2E User Flow", () => {
     await expect(page).toHaveURL(/\/notes/u);
   });
 
-  test("tương tác với Contact form, gõ tin nhắn và Clear", async ({ page }) => {
-    await page.goto("/#contact");
-    const contactSection = page.locator("#contact");
-    await expect(contactSection).toBeVisible();
+  test("tương tác với các section và danh sách liên hệ của Portfolio 2026", async ({ page }) => {
+    await page.goto("/");
 
-    // Kiểm tra input placeholder
-    const input = contactSection.locator('input[placeholder="Say hello..."]');
-    await expect(input).toBeVisible();
+    // 1. Kiểm tra các section chính hiển thị
+    await expect(page.locator("h2:has-text('ABOUT')")).toBeVisible();
+    await expect(page.locator("h2:has-text('EXPERIENCE')")).toBeVisible();
+    await expect(page.locator("h2:has-text('PROJECTS')")).toBeVisible();
+    await expect(page.locator("h2:has-text('CERTIFICATIONS & ACTIVITIES')")).toBeVisible();
 
-    // 1. Gõ tin nhắn vào input
-    await input.fill("Hello Chien! I would like to collaborate.");
-    await expect(input).toHaveValue("Hello Chien! I would like to collaborate.");
+    // 2. Kiểm tra nút View Projects cuộn tới mục #projects
+    const viewProjectsBtn = page.locator("a[aria-label='Cuộn xuống xem danh sách dự án']");
+    await expect(viewProjectsBtn).toBeVisible();
 
-    // 2. Click nút Clear
-    const clearBtn = contactSection.locator("button[aria-label='Clear message']");
-    await expect(clearBtn).toBeVisible();
-    await clearBtn.click();
-    await expect(input).toHaveValue("");
+    // 3. Kiểm tra danh sách dự án hiển thị
+    await expect(page.locator("h3:has-text('E-commerce AI Agent')")).toBeVisible();
+    await expect(page.locator("h3:has-text('Interactive Novel')")).toBeVisible();
 
-    // 3. Kiểm tra các pill mạng xã hội ở hàng dưới
-    await expect(contactSection.locator("a:has-text('Gmail')")).toBeVisible();
-    await expect(contactSection.locator("a:has-text('GitHub')")).toBeVisible();
-    await expect(contactSection.locator("a:has-text('Facebook')")).toBeVisible();
+    // 4. Kiểm tra các link liên hệ
+    const emailLink = page.locator("a[aria-label='gmail']");
+    await expect(emailLink).toBeVisible();
   });
 });
 

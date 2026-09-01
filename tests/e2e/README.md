@@ -9,6 +9,7 @@ Thư mục `tests/e2e/` chứa toàn bộ các kịch bản kiểm thử hành t
 | File | Phạm vi kiểm thử |
 | :--- | :--- |
 | [`tests/e2e/portfolio.spec.ts`](file:///e:/LEARN/chien-frontend-portfolio/tests/e2e/portfolio.spec.ts) | 1. Tải trang chủ và render đầy đủ các section (Hero, About, Contact, Footer).<br>2. Kiểm tra Deploy Badge hiển thị chuẩn.<br>3. Kiểm tra tương tác mở Modal Release History và đóng bằng phím ESC. |
+| [`tests/e2e/portfolio2026.spec.ts`](file:///e:/LEARN/chien-frontend-portfolio/tests/e2e/portfolio2026.spec.ts) | 1. Kiểm tra Hero Name render trên `/portfolio2026`.<br>2. Kiểm tra hiệu ứng tên thu nhỏ và neo vào góc trái khi cuộn qua Hero.<br>3. Bấm vào nút tên ở góc trái để cuộn mượt về đầu trang. |
 | [`tests/e2e/notes.spec.ts`](file:///e:/LEARN/chien-frontend-portfolio/tests/e2e/notes.spec.ts) | 1. Tải trang danh sách bài viết `/notes` và hiển thị danh sách bài viết.<br>2. Tìm kiếm bài viết theo từ khóa và lọc thẻ Tab tương tác.<br>3. Xem bài viết chi tiết `/notes/[slug]`, kiểm tra Typography, TOC và Reading Progress.<br>4. Kiểm tra trang 404 thân thiện khi truy cập slug không tồn tại. |
 
 ---
