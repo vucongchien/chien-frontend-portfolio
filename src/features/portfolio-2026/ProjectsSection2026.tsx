@@ -24,7 +24,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     title: "Fitness AI Website",
     category: "Full-stack Developer (Backend + Frontend)",
     period: "06/2026 — 08/2026 · Team of 3",
-    image: "/project3.png",
+    image: "/project4.png",
     description: [
       "Designed and implemented a modular monolith in Go for Coaching and Exercise service decomposition.",
       "Built an agentic coaching system using the Gemini API for 4-week workout plan generation, with business-rule constraints, exercise management, and reference-backed guardrails.",
@@ -47,6 +47,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
       "Designed and built frontend UX flows with BFF architecture, strategic caching, and Progressive Web features, deploying the client on Vercel.",
     ],
     techStack: ["Java", "Spring Boot", "Microservices", "Protobuf/gRPC", "Redis", "Kafka", "FCM", "Helm", "Next.js", "Vercel"],
+    demoUrl: "https://my-app-lovat-five-15.vercel.app/",
     githubUrl: "https://github.com/vucongchien/rent-a-gf-fe",
     githubBackendUrl: "https://github.com/tianshi04/rent-a-girlfriend",
   },
