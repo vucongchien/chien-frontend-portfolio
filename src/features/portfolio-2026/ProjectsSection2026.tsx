@@ -40,7 +40,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     title: "Rent-a-GF Platform",
     category: "Full-stack Developer (Microservices + Frontend)",
     period: "10/2025 — 12/2025 · Team of 3",
-    image: "/project2.png",
+    image: "/project3.png",
     description: [
       "Authored BRD and PRD specifications for a microservices architecture, defining Protobuf contracts and service boundaries.",
       "Built the Java-based Notification Service, leveraging Redis for state caching to deliver multi-channel alerts across Gmail, Web Push, and FCM.",
@@ -60,6 +60,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     image: "/project1.png",
     description: [
       "Modern culinary e-commerce platform built with Next.js, FastAPI & Supabase.",
+      "Engineered core e-commerce capabilities including dynamic product catalog search, responsive shopping cart state management, and streamlined checkout.",
       "Integrated conversational AI Agents, MCP Server, and automated workflow tooling with AgUI.",
     ],
     techStack: ["Next.js", "TypeScript", "FastAPI", "Supabase", "MCP Server", "AgUI", "TailwindCSS"],
