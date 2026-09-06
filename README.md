@@ -19,8 +19,12 @@ Trang web Portfolio cá nhân của **Vũ Công Chiến (Software Engineer)**, �
   - **Headless Data & Logic:** Tách biệt hoàn toàn dữ liệu tĩnh và State logic (`useTypewriter`, `useScrollProgress`) khỏi tầng hiển thị.
   - **Feature-Driven Frontend:** Đóng gói giao diện độc lập (`hero`, `about`, `projects`, `skills`, `contact`, `changelog`, `notes`).
   - **Server & BFF Modules:** Đóng gói logic backend/BFF (`src/server/modules/`), sẵn sàng mở rộng cho **AI Chat Streaming** và **Notes** mà không làm thay đổi cấu trúc cũ.
-- **🧪 Kiểm Thử Tự Động (E2E Testing):**
+- **🧪 Kiểm Thử Tự Động (Unit & E2E Testing):**
+  - Kiểm thử chức năng và logic với **Vitest** & **Testing Library**.
   - Hệ thống kiểm thử End-to-End với **Playwright** đảm bảo các luồng tương tác thực tế của người dùng luôn hoạt động ổn định.
+- **📊 Behavioral Analytics (Microsoft Clarity):**
+  - Giám sát hành vi người dùng thực tế: Session Replay, Attention Heatmap, Scroll Depth, phát hiện thao tác cuộn nhanh và Rage Clicks.
+  - Tích hợp không chặn (Zero Blocking) qua `next/script` với `strategy="lazyOnload"`, bảo toàn điểm số hiệu năng Core Web Vitals (FCP, LCP, INP).
 
 ---
 

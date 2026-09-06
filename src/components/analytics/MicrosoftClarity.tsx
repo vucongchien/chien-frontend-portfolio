@@ -14,9 +14,11 @@ export interface MicrosoftClarityProps {
  */
 export function MicrosoftClarity({
   projectId,
-  enabledInDev = false,
+  enabledInDev,
 }: MicrosoftClarityProps) {
   const clarityId = projectId || process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+  const isDevEnabled =
+    enabledInDev ?? process.env.NEXT_PUBLIC_CLARITY_ENABLED_IN_DEV === "true";
 
   // Không có Project ID thì không chèn script
   if (!clarityId || clarityId.trim() === "") {
@@ -24,7 +26,7 @@ export function MicrosoftClarity({
   }
 
   // Tự động bỏ qua trên môi trường development trừ khi được bật cờ rõ ràng
-  if (process.env.NODE_ENV === "development" && !enabledInDev) {
+  if (process.env.NODE_ENV === "development" && !isDevEnabled) {
     return null;
   }
 
