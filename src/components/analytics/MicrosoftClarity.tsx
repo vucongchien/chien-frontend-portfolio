@@ -12,16 +12,11 @@ export interface MicrosoftClarityProps {
  * - Sử dụng strategy="lazyOnload" để chỉ tải script khi trình duyệt nhàn rỗi, không làm chậm FCP/LCP.
  * - Mặc định tự động vô hiệu hóa trên localhost/development để tránh spam dữ liệu rác.
  */
-const DEFAULT_CLARITY_ID = "ydzjpx103e";
-
 export function MicrosoftClarity({
   projectId,
   enabledInDev,
 }: MicrosoftClarityProps) {
-  const clarityId =
-    projectId ||
-    process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ||
-    DEFAULT_CLARITY_ID;
+  const clarityId = projectId || process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
   const isDevEnabled =
     enabledInDev ?? process.env.NEXT_PUBLIC_CLARITY_ENABLED_IN_DEV === "true";
 
