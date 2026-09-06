@@ -12,21 +12,21 @@ export const size = {
 export const contentType = "image/png";
 
 export default function RootOpenGraphImage() {
-  // Ưu tiên đọc ảnh vector avatar_SEO.svg theo yêu cầu SEO, fallback sang avatar.png nếu không tìm thấy
+  // Đọc ảnh avatar.png (bản sketch gốc) cho OpenGraph SEO
   let avatarBase64 = "";
   try {
-    const seoAvatarPath = path.join(process.cwd(), "public", "avatar_SEO.svg");
-    const fallbackAvatarPath = path.join(process.cwd(), "public", "avatar.png");
+    const pngAvatarPath = path.join(process.cwd(), "public", "avatar.png");
+    const svgAvatarPath = path.join(process.cwd(), "public", "avatar_SEO.svg");
 
-    if (fs.existsSync(seoAvatarPath)) {
-      const svgBuffer = fs.readFileSync(seoAvatarPath);
-      avatarBase64 = `data:image/svg+xml;base64,${svgBuffer.toString("base64")}`;
-    } else if (fs.existsSync(fallbackAvatarPath)) {
-      const avatarBuffer = fs.readFileSync(fallbackAvatarPath);
+    if (fs.existsSync(pngAvatarPath)) {
+      const avatarBuffer = fs.readFileSync(pngAvatarPath);
       avatarBase64 = `data:image/png;base64,${avatarBuffer.toString("base64")}`;
+    } else if (fs.existsSync(svgAvatarPath)) {
+      const svgBuffer = fs.readFileSync(svgAvatarPath);
+      avatarBase64 = `data:image/svg+xml;base64,${svgBuffer.toString("base64")}`;
     }
   } catch (error) {
-    console.error("[OG-Image] Không thể đọc avatar_SEO.svg hoặc avatar.png:", error);
+    console.error("[OG-Image] Không thể đọc avatar.png hoặc avatar_SEO.svg:", error);
   }
 
   return new ImageResponse(

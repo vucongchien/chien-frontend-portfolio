@@ -43,8 +43,9 @@ describe("SEO & OpenGraph Configuration", () => {
     const artifactDir =
       "C:/Users/123ch/.gemini/antigravity/brain/caea6569-e871-4fa8-86ad-e41b8dbb58dd";
     if (fs.existsSync(artifactDir)) {
-      const previewPath = path.join(artifactDir, "actual_og_preview.png");
-      fs.writeFileSync(previewPath, Buffer.from(arrayBuffer));
+      const buffer = Buffer.from(arrayBuffer);
+      fs.writeFileSync(path.join(artifactDir, "actual_og_preview.png"), buffer);
+      fs.writeFileSync(path.join(artifactDir, "preview_og_png.png"), buffer);
     }
   });
 });
