@@ -9,7 +9,7 @@
     "lint": "oxlint --deny-warnings",
     "lint:fast": "oxlint --deny-warnings",
     "lint:fix": "oxlint --fix",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "prisma generate && tsc --noEmit",
     "test": "playwright test",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"

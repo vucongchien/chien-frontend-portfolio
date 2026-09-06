@@ -132,7 +132,7 @@ export default async function NoteOpenGraphImage({
             ))}
           </div>
           <div style={{ fontSize: 18, color: "#94a3b8", fontWeight: 500 }}>
-            vucongchien.vercel.app/notes
+            chien-frontend-portfolio.vercel.app/notes
           </div>
         </div>
       </div>

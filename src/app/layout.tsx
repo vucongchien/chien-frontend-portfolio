@@ -5,6 +5,7 @@ import "./globals.css";
 import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { siteConfig } from "@/config/site";
 
 const lora = Lora({
   subsets: ["vietnamese", "latin"],
@@ -13,28 +14,55 @@ const lora = Lora({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vucongchien.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Vu Cong Chien · Software Engineer",
-    template: "%s · Vu Cong Chien",
+    default: siteConfig.title,
+    template: `%s · ${siteConfig.name}`,
   },
-  description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.author.github }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Vu Cong Chien · Software Engineer",
-    description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
-    url: siteUrl,
-    siteName: "Vu Cong Chien Portfolio",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: `${siteConfig.name} Portfolio`,
     locale: "vi_VN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vu Cong Chien · Software Engineer",
-    description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
+    title: siteConfig.title,
+    description: siteConfig.description,
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.author.name,
+  jobTitle: siteConfig.author.role,
+  url: siteConfig.url,
+  sameAs: [siteConfig.author.github, siteConfig.author.facebook],
+  email: siteConfig.author.email,
+  knowsAbout: siteConfig.keywords,
 };
 
 export default function RootLayout({
@@ -44,6 +72,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${lora.variable} antialiased`}>
         {children}
         <MicrosoftClarity />
@@ -53,4 +87,3 @@ export default function RootLayout({
     </html>
   );
 }
-

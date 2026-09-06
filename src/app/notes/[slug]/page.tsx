@@ -12,6 +12,8 @@ import NoteContent from "@/features/notes/components/NoteContent";
 import NoteBottomAction from "@/features/notes/components/NoteBottomAction";
 import Footer from "@/components/layout/Footer";
 
+import { siteConfig } from "@/config/site";
+
 interface NotesDetailPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -32,8 +34,11 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${note.title} · Vũ Công Chiến`,
+    title: note.title,
     description: note.excerpt || note.title,
+    alternates: {
+      canonical: `/notes/${note.slug}`,
+    },
     openGraph: {
       title: note.title,
       description: note.excerpt || note.title,
@@ -41,6 +46,11 @@ export async function generateMetadata({
       publishedTime: note.publishedAt,
       authors: [note.author.name],
       tags: note.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: note.title,
+      description: note.excerpt || note.title,
     },
   };
 }
@@ -56,8 +66,32 @@ export default async function NotesDetailPage({ params }: NotesDetailPageProps) 
   const { previous, next } = getAdjacentNotes(slug);
   const initialLikes = await getNoteLikes(slug);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: note.title,
+    description: note.excerpt || note.title,
+    datePublished: note.publishedAt,
+    dateModified: note.publishedAt,
+    author: {
+      "@type": "Person",
+      name: note.author.name,
+      url: siteConfig.author.github,
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    keywords: note.tags,
+  };
+
   return (
     <div className="relative min-h-screen bg-white flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <ReadingProgressBar />
 
       <main className="relative z-10 flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 py-14 sm:py-20">

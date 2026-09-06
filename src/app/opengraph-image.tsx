@@ -117,7 +117,7 @@ export default function RootOpenGraphImage() {
             ))}
           </div>
           <div style={{ fontSize: 20, color: "#94a3b8", fontWeight: 500 }}>
-            vucongchien.vercel.app
+            chien-frontend-portfolio.vercel.app
           </div>
         </div>
       </div>
