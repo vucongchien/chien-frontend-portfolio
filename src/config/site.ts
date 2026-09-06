@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "Vu Cong Chien",
-  title: "Vu Cong Chien · Software Engineer",
+  name: "Vũ Công Chiến",
+  title: "Vũ Công Chiến · Software Engineer",
   description:
-    "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer) - Conversational Editorial Minimalism, Next.js 16, Clean Architecture.",
+    "Portfolio của Vũ Công Chiến - Software Engineer. Trình diễn kỹ thuật, dự án và bài viết về Next.js, TypeScript và Clean Architecture.",
   url: "https://chien-frontend-portfolio.vercel.app",
   author: {
-    name: "Vu Cong Chien",
+    name: "Vũ Công Chiến",
     role: "Software Engineer",
     email: "vucongchien204@gmail.com",
     github: "https://github.com/vucongchien",

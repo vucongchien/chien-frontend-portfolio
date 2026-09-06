@@ -9,7 +9,7 @@ import { MorphingBrandName2026 } from "@/features/portfolio-2026/MorphingBrandNa
 
 export const metadata: Metadata = {
   title: "Vũ Công Chiến · Portfolio 2026",
-  description: "Minimalist Editorial Portfolio 2026 of Vu Cong Chien (Software Engineer)",
+  description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
 };
 
 export default function Portfolio2026Page() {

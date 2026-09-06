@@ -8,8 +8,8 @@ import Footer from "@/components/layout/Footer";
 import { MorphingBrandName2026 } from "@/features/portfolio-2026/MorphingBrandName2026";
 
 export const metadata: Metadata = {
-  title: "Vũ Công Chiến · Portfolio 2026",
-  description: "Minimalist Editorial Portfolio 2026 of Vu Cong Chien (Software Engineer)",
+  title: "Vũ Công Chiến · Software Engineer",
+  description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
 };
 
 export default function Home() {
