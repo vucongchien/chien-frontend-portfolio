@@ -1,4 +1,4 @@
-﻿import React, { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import {
   PythonIcon,
   LangChainIcon,
@@ -12,7 +12,10 @@ import {
   TailwindIcon,
   PlaywrightIcon,
   VitestIcon,
-  NodeJSIcon,
+  GoIcon,
+  SpringBootIcon,
+  GRPCIcon,
+  KafkaIcon,
   PostgreSQLIcon,
   DockerIcon,
   RedisIcon,
@@ -62,8 +65,11 @@ export const FRONTEND_LOGOS: TechLogo[] = [
 
 // Ống 3: Backend, Infra & DevOps
 export const BACKEND_LOGOS: TechLogo[] = [
+  { id: "go", name: "Golang", icon: <GoIcon /> },
+  { id: "springboot", name: "Spring Boot", icon: <SpringBootIcon /> },
   { id: "fastapi", name: "FastAPI", icon: <FastAPIIcon /> },
-  { id: "nodejs", name: "Node.js", icon: <NodeJSIcon /> },
+  { id: "grpc", name: "gRPC", icon: <GRPCIcon /> },
+  { id: "kafka", name: "Apache Kafka", icon: <KafkaIcon /> },
   { id: "postgresql", name: "PostgreSQL", icon: <PostgreSQLIcon /> },
   { id: "redis", name: "Redis", icon: <RedisIcon /> },
   { id: "docker", name: "Docker", icon: <DockerIcon /> },
@@ -73,3 +79,4 @@ export const BACKEND_LOGOS: TechLogo[] = [
   { id: "git", name: "Git", icon: <GitIcon /> },
   { id: "postman", name: "Postman", icon: <PostmanIcon /> },
 ];
+

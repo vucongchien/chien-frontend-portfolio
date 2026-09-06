@@ -16,11 +16,14 @@ export const skillCategories: SkillCategory[] = [
     title: "Backend",
     emoji: "⚙️",
     skills: [
+      { name: "Go", icon: "🐹", level: 4 },
+      { name: "Spring Boot", icon: "🌱", level: 4 },
       { name: "Python", icon: "🐍", level: 4 },
-      { name: "FastAPI", icon: "⚡", level: 3 },
-      { name: "Node.js", icon: "🟢", level: 3 },
-      { name: "PostgreSQL", icon: "🐘", level: 3 },
-      { name: "Redis", icon: "🧠", level: 2 },
+      { name: "FastAPI", icon: "⚡", level: 4 },
+      { name: "gRPC", icon: "🔌", level: 3 },
+      { name: "Apache Kafka", icon: "📨", level: 3 },
+      { name: "PostgreSQL", icon: "🐘", level: 4 },
+      { name: "Redis", icon: "🧠", level: 3 },
     ],
   },
   {
