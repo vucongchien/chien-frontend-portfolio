@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import "./globals.css";
 import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const lora = Lora({
   subsets: ["vietnamese", "latin"],
@@ -11,9 +13,28 @@ const lora = Lora({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vucongchien.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Vu Cong Chien · Software Engineer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Vu Cong Chien · Software Engineer",
+    template: "%s · Vu Cong Chien",
+  },
   description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
+  openGraph: {
+    title: "Vu Cong Chien · Software Engineer",
+    description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
+    url: siteUrl,
+    siteName: "Vu Cong Chien Portfolio",
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vu Cong Chien · Software Engineer",
+    description: "Personal portfolio and engineering showcase of Vu Cong Chien (Software Engineer)",
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +47,10 @@ export default function RootLayout({
       <body className={`${lora.variable} antialiased`}>
         {children}
         <MicrosoftClarity />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
 }
+

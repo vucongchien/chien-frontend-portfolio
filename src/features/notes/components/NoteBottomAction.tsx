@@ -1,32 +1,84 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition, useSyncExternalStore } from "react";
 import Link from "next/link";
 import type { NotePost } from "@/types";
 import NoteShareDropdown from "./NoteShareDropdown";
+import { toggleNoteLikeAction } from "@/server/modules/notes/likes.action";
 
 interface NoteBottomActionProps {
   note: NotePost;
   previous?: NotePost;
   next?: NotePost;
+  initialLikes?: number;
+}
+
+// eslint-disable-next-line promise/prefer-await-to-callbacks
+function subscribeToStorage(listener: () => void) {
+  globalThis.addEventListener("storage", listener);
+  return () => {
+    globalThis.removeEventListener("storage", listener);
+  };
+}
+
+function getStoredLiked(key: string): boolean {
+  try {
+    return (
+      globalThis.window !== undefined &&
+      globalThis.localStorage.getItem(key) === "true"
+    );
+  } catch {
+    return false;
+  }
 }
 
 export default function NoteBottomAction({
   note,
   previous,
   next,
+  initialLikes = 0,
 }: NoteBottomActionProps) {
-  const [likes, setLikes] = useState(0);
-  const [isLiked, setIsLiked] = useState(false);
+  const storageKey = `note_liked_${note.slug}`;
+  const isStoredLiked = useSyncExternalStore(
+    subscribeToStorage,
+    () => getStoredLiked(storageKey),
+    () => false
+  );
+
+  const [overrideLiked, setOverrideLiked] = useState<boolean | null>(null);
+  const [likesDelta, setLikesDelta] = useState(0);
+  const [isPending, startTransition] = useTransition();
+
+  const isLiked = overrideLiked === null ? isStoredLiked : overrideLiked;
+  const currentLikes = Math.max(0, initialLikes + likesDelta);
 
   const handleLike = () => {
-    if (isLiked) {
-      setLikes((prev) => Math.max(0, prev - 1));
-      setIsLiked(false);
-    } else {
-      setLikes((prev) => prev + 1);
-      setIsLiked(true);
+    const nextLikedState = !isLiked;
+    const nextDelta = nextLikedState ? likesDelta + 1 : likesDelta - 1;
+
+    setOverrideLiked(nextLikedState);
+    setLikesDelta(nextDelta);
+
+    try {
+      if (nextLikedState) {
+        localStorage.setItem(storageKey, "true");
+      } else {
+        localStorage.removeItem(storageKey);
+      }
+    } catch {
+      // Bỏ qua lỗi lưu storage
     }
+
+    startTransition(async () => {
+      const result = await toggleNoteLikeAction(note.slug, nextLikedState);
+      if (result.success) {
+        setLikesDelta(result.likes - initialLikes);
+      } else {
+        // Rollback nếu thất bại
+        setOverrideLiked(!nextLikedState);
+        setLikesDelta(likesDelta);
+      }
+    });
   };
 
   return (
@@ -42,7 +94,11 @@ export default function NoteBottomAction({
         <button
           type="button"
           onClick={handleLike}
-          className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-50 transition-colors cursor-pointer"
+          disabled={isPending}
+          aria-busy={isPending}
+          className={`group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-50 transition-all cursor-pointer ${
+            isPending ? "opacity-75" : ""
+          }`}
           aria-label={isLiked ? "Unlike bài viết" : "Like bài viết"}
         >
           <svg
@@ -61,7 +117,7 @@ export default function NoteBottomAction({
               d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
             />
           </svg>
-          <span className="font-mono tracking-[0.04em]">{likes} Likes</span>
+          <span className="font-mono tracking-[0.04em]">{currentLikes} Likes</span>
         </button>
       </div>
 

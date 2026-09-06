@@ -5,6 +5,7 @@ import {
   getNoteBySlug,
   getAdjacentNotes,
 } from "@/server/modules/notes/notes.service";
+import { getNoteLikes } from "@/server/modules/notes/likes.service";
 import ReadingProgressBar from "@/features/notes/components/ReadingProgressBar";
 import NoteHeader from "@/features/notes/components/NoteHeader";
 import NoteContent from "@/features/notes/components/NoteContent";
@@ -53,6 +54,7 @@ export default async function NotesDetailPage({ params }: NotesDetailPageProps) 
   }
 
   const { previous, next } = getAdjacentNotes(slug);
+  const initialLikes = await getNoteLikes(slug);
 
   return (
     <div className="relative min-h-screen bg-white flex flex-col">
@@ -67,7 +69,12 @@ export default async function NotesDetailPage({ params }: NotesDetailPageProps) 
           <NoteContent htmlContent={note.htmlContent} />
 
           {/* Note Bottom Action: Share + Likes + Navigation (Ảnh 3) */}
-          <NoteBottomAction note={note} previous={previous} next={next} />
+          <NoteBottomAction
+            note={note}
+            previous={previous}
+            next={next}
+            initialLikes={initialLikes}
+          />
         </article>
       </main>
 
