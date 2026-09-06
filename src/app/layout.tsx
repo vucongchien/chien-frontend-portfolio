@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import "./globals.css";
+import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
 
 const lora = Lora({
   subsets: ["vietnamese", "latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lora.variable} antialiased`}>
         {children}
+        <MicrosoftClarity />
       </body>
     </html>
   );
