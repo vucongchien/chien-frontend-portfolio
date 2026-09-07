@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Diamond from "@/components/ui/Diamond";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { cn } from "@/lib/utils";
 
 interface FooterProps {
@@ -108,7 +108,7 @@ export default function Footer({
         {/* Cột trái: Tên + Link Home & Notes tách rộng thoáng đãng */}
         <div className="flex flex-wrap items-center gap-8 sm:gap-12 md:gap-14 text-sm">
           <div className="flex items-center gap-2.5">
-            <Diamond size="sm" color="teal" />
+            <BrandLogo size="sm" variant="badge" />
             <span className="font-semibold text-neutral-900 tracking-tight">
               Vũ Công Chiến
             </span>

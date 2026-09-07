@@ -97,28 +97,43 @@ export function AboutMeSection2026({
           </div>
 
           {/* ══════════════════════════════════════════════════════════════
-              BỘ 2 CHỈ SỐ THỰC CHIẾN DẠNG CARD NHỎ GỌN
+              BỘ 3 CHỈ SỐ THỰC CHIẾN DẠNG CARD NHỎ GỌN (ĐỒNG BỘ GIAO DIỆN)
               ══════════════════════════════════════════════════════════════ */}
-          <div className="w-full grid grid-cols-2 gap-3 pt-2">
+          <div className="w-full grid grid-cols-3 gap-2 sm:gap-3 pt-2">
             {/* Card 1: Tháng thực tập (Điểm nhấn Champagne Gold - Palette 4) */}
-            <div className="bg-neutral-50/80 border border-neutral-200/60 rounded-md p-3 flex flex-col items-start transition-all hover:bg-neutral-100/60">
-              <div className="flex items-baseline font-mono text-lg sm:text-xl font-bold text-black">
+            <div className="bg-neutral-50/80 border border-neutral-200/60 rounded-md p-2.5 sm:p-3 flex flex-col items-start justify-between transition-all hover:bg-neutral-100/60">
+              <div className="flex items-baseline font-mono text-base sm:text-lg md:text-xl font-bold text-black">
                 <span>{internshipMonths}</span>
                 <span className="text-palette-4 text-base font-normal ml-0.5">+</span>
               </div>
               <span className="font-mono text-3xs sm:text-2xs text-neutral-500 mt-0.5 leading-tight">
-                Months of Internship
+                Months of Exp
               </span>
             </div>
 
             {/* Card 2: Dự án đã build (Điểm nhấn Deep Teal - Palette 1) */}
-            <div className="bg-neutral-50/80 border border-neutral-200/60 rounded-md p-3 flex flex-col items-start transition-all hover:bg-neutral-100/60">
-              <div className="flex items-baseline font-mono text-lg sm:text-xl font-bold text-black">
+            <div className="bg-neutral-50/80 border border-neutral-200/60 rounded-md p-2.5 sm:p-3 flex flex-col items-start justify-between transition-all hover:bg-neutral-100/60">
+              <div className="flex items-baseline font-mono text-base sm:text-lg md:text-xl font-bold text-black">
                 <span>{projectsCount}</span>
                 <span className="text-palette-1 text-base font-normal ml-0.5">+</span>
               </div>
               <span className="font-mono text-3xs sm:text-2xs text-neutral-500 mt-0.5 leading-tight">
                 Projects Built
+              </span>
+            </div>
+
+            {/* Card 3: Lượt xem đồng bộ GitHub Profile (Điểm nhấn Deep Teal) */}
+            <div className="bg-neutral-50/80 border border-neutral-200/60 rounded-md p-2.5 sm:p-3 flex flex-col items-start justify-between transition-all hover:bg-neutral-100/60">
+              <div className="flex items-center min-h-[24px] sm:min-h-[28px] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://komarev.com/ghpvc/?username=vucongchien&color=1C8DA6&style=flat-square&label=VIEWS"
+                  alt="Profile Views"
+                  className="h-4 sm:h-[18px] max-w-full object-contain rounded-xs"
+                />
+              </div>
+              <span className="font-mono text-3xs sm:text-2xs text-neutral-500 mt-0.5 leading-tight">
+                Profile Views
               </span>
             </div>
           </div>
