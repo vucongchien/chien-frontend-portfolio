@@ -26,7 +26,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     period: "06/2026 — 08/2026 · Team of 3",
     image: "/project4.png",
     description: [
-      "Designed and implemented a modular monolith in Go for Coaching and Exercise service decomposition.",
+      "Designed and implemented two backend services for Coaching and Exercise in Go within a modular monolith, using DDD and Protobuf, with event-driven architecture, Kafka, and the Outbox Pattern for future service decomposition, deployed container images to Railway.",
       "Built an agentic coaching system using the Gemini API for 4-week workout plan generation, with business-rule constraints, exercise management, and reference-backed guardrails.",
       "Built a frontend with BFF architecture, strategic caching, optimized rendering strategies, and Web Workers for camera and AI processing.",
     ],
