@@ -24,7 +24,7 @@ const DEFAULT_EXPERIENCES: ExperienceItem[] = [
       "Improved enterprise web portal UI/UX across internal domains, resolving complex display issues and ensuring accurate information and real-time state rendering.",
       "Prototyped a Zalo Mini App MVP in React with the intern team to demonstrate P2P voucher gifting flows.",
     ],
-    techStack: ["Claude Code", "Voucher System", "Zalo Mini App", "Design System", "Design Document"],
+    techStack: ["Claude Code", "React", "Laravel", "Voucher System", "Zalo Mini App", "Design System", "Design Document"],
   },
   {
     id: "exp-ads-agency",
