@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { BrandLogo } from "@/components/ui/BrandLogo";
 
 interface MorphingBrandName2026Props {
   name?: string;
@@ -35,7 +34,6 @@ export function MorphingBrandName2026({
 }: MorphingBrandName2026Props) {
   const containerRef = useRef<HTMLButtonElement>(null);
   const badgeRef = useRef<HTMLSpanElement>(null);
-  const logoRef = useRef<HTMLSpanElement>(null);
   const [isInteractive, setIsInteractive] = useState(false);
 
   useEffect(() => {
@@ -130,15 +128,12 @@ export function MorphingBrandName2026({
       containerRef.current.style.opacity = "1";
       containerRef.current.style.visibility = "visible";
 
-      // Cập nhật độ trong suốt của background logo badge và icon
+      // Cập nhật độ trong suốt của background badge
       if (badgeRef.current) {
         badgeRef.current.style.opacity = `${progress}`;
       }
-      if (logoRef.current) {
-        logoRef.current.style.opacity = `${progress}`;
-      }
 
-      // Kích hoạt tương tác click khi đã morph thành Logo
+      // Kích hoạt tương tác click khi đã morph
       setIsInteractive(progress > 0.4);
     };
 
@@ -209,7 +204,7 @@ export function MorphingBrandName2026({
       type="button"
       ref={containerRef}
       onClick={isInteractive ? handleScrollToTop : undefined}
-      aria-label={`Brand logo - ${name} (Click to scroll to top)`}
+      aria-label={`${name} (Click to scroll to top)`}
       style={{
         opacity: 0,
         visibility: "hidden",
@@ -219,21 +214,12 @@ export function MorphingBrandName2026({
       }`}
     >
       <div className="relative inline-flex items-center">
-        {/* Nền badge mờ nhẹ tăng dần khi biến hình thành logo để bảo vệ text khi lướt qua nội dung bên dưới */}
+        {/* Nền badge mờ nhẹ tăng dần khi biến hình để bảo vệ text khi lướt qua nội dung bên dưới */}
         <span
           ref={badgeRef}
-          className="absolute -left-12 -right-4 -inset-y-2 rounded-full bg-white/90 backdrop-blur-md border border-neutral-200/80 shadow-xs pointer-events-none transition-opacity duration-150"
+          className="absolute -inset-x-4 -inset-y-2 rounded-full bg-white/90 backdrop-blur-md border border-neutral-200/80 shadow-xs pointer-events-none transition-opacity duration-150"
           style={{ opacity: 0 }}
         />
-
-        {/* Biểu tượng BrandLogo thu nhỏ xuất hiện mượt mà cạnh tên khi morph thành badge */}
-        <span
-          ref={logoRef}
-          className="absolute -left-10 top-1/2 -translate-y-1/2 flex items-center pointer-events-none transition-opacity duration-150"
-          style={{ opacity: 0 }}
-        >
-          <BrandLogo size="md" variant="badge" />
-        </span>
 
         {/* Tên chính: Bắt đầu sát 100% lề trái, cho phép bôi đen chọn văn bản tự nhiên */}
         <span className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black uppercase font-serif whitespace-nowrap select-text">
